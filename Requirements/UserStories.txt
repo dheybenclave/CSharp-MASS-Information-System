@@ -1,0 +1,74 @@
+AS A COORDINATOR AND CO - COORDINATOR
+
+As a user, I am able to manage my co - officer(user) with this system
+
+As a user, I am able to create, delete, and update the account of co - officer(user)  
+
+As a user , I am able to edit the database connection .
+
+As a user, I am able to view all form specifically.
+
+As a user, I am able to add, update and delete member(s) details
+
+As a user, I am able to search my member(s) base on details
+
+As a user, I am able to print my masterlist, attendance and treasurer report  using Microsoft Excel
+
+As a user, I am able to add attendance according to date
+
+As a user, I am able to view the all present and absent respectfully by date.
+
+As a user, I am able to update my member status  either present or absent
+
+As a user, I am able to search all member filter by status and date
+
+As a user, I am able to add budget and date to print treasurer report
+
+As a user, I am able to add, update ,and delete notes according to date
+
+As a user, I am able to view the all notes and search filter by status and date
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+AS A SECRETARY
+
+As a user , I am able to update  of current user .
+
+As a user, I am able to add attendance according to date
+
+As a user, I am able to view the all present and absent respectfully by date.
+
+As a user, I am able to update my member status  either present or absent
+
+As a user, I am able to search all member filter by status and date
+
+As a user, I am able to print the attendance according to date selected using Microsoft Excel
+
+As a user, I am able to access the masterlist form to helps with permission of higher officer
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+AS A TREASURER
+
+As a user, I am able to update  of current user .
+
+As a user, I am able to add budget and date to print treasurer report
+
+As a user, I am able to print the report by using Microsoft Excel
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+AS A COMMITEE
+
+As a user, I am able to update  of current user .
+
+As a user, I am able to add, update, and delete notes
+
+As a user, I am able to view all notes, and filter according to selected date and status 
+ 
