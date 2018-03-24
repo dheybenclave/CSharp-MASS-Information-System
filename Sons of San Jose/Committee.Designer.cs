@@ -196,12 +196,12 @@
             this.minimize.AutoSize = true;
             this.minimize.BackColor = System.Drawing.Color.Green;
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
             this.minimize.Location = new System.Drawing.Point(1280, 5);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 36);
+            this.minimize.Size = new System.Drawing.Size(29, 36);
             this.minimize.TabIndex = 18;
             this.minimize.Text = "-";
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
@@ -212,12 +212,12 @@
             this.close.AutoSize = true;
             this.close.BackColor = System.Drawing.Color.Green;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.close.Font = new System.Drawing.Font("American Writer", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
             this.close.Location = new System.Drawing.Point(1315, 4);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 36);
+            this.close.Size = new System.Drawing.Size(24, 36);
             this.close.TabIndex = 17;
             this.close.Text = "x";
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -290,11 +290,11 @@
             this.btndelete.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btndelete.BorderColor = System.Drawing.Color.Crimson;
             this.btndelete.BorderWidth = 5;
-            this.btndelete.CornerRadius = 28;
+            this.btndelete.CornerRadius = 24;
             this.btndelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btndelete.Location = new System.Drawing.Point(1075, 574);
+            this.btndelete.Location = new System.Drawing.Point(1048, 573);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(151, 58);
+            this.btndelete.Size = new System.Drawing.Size(122, 49);
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnupdate
@@ -305,11 +305,11 @@
             this.btnupdate.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnupdate.BorderColor = System.Drawing.Color.DeepPink;
             this.btnupdate.BorderWidth = 5;
-            this.btnupdate.CornerRadius = 28;
+            this.btnupdate.CornerRadius = 24;
             this.btnupdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnupdate.Location = new System.Drawing.Point(910, 573);
+            this.btnupdate.Location = new System.Drawing.Point(1190, 573);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(151, 58);
+            this.btnupdate.Size = new System.Drawing.Size(122, 49);
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btnaddnotes
@@ -320,11 +320,11 @@
             this.btnaddnotes.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnaddnotes.BorderColor = System.Drawing.Color.Green;
             this.btnaddnotes.BorderWidth = 5;
-            this.btnaddnotes.CornerRadius = 27;
+            this.btnaddnotes.CornerRadius = 24;
             this.btnaddnotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnaddnotes.Location = new System.Drawing.Point(539, 581);
+            this.btnaddnotes.Location = new System.Drawing.Point(568, 578);
             this.btnaddnotes.Name = "btnaddnotes";
-            this.btnaddnotes.Size = new System.Drawing.Size(147, 55);
+            this.btnaddnotes.Size = new System.Drawing.Size(122, 49);
             this.btnaddnotes.Click += new System.EventHandler(this.btnaddnotes_Click);
             // 
             // lstrightnotes

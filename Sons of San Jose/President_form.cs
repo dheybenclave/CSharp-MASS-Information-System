@@ -109,7 +109,6 @@ namespace Sons_of_San_Jose
         {
             MasterList ml = new MasterList();
             ml.Location = this.Location;
-            ml.WindowState = FormWindowState.Maximized;
             ml.ShowDialog();
         }
         private void btnsecreatry_Click(object sender, EventArgs e)
@@ -117,7 +116,6 @@ namespace Sons_of_San_Jose
             Secretary s = new Secretary();
             s.Location = this.Location;
             s.ifpresident = 1;
-            s.WindowState = FormWindowState.Maximized;
             s.ShowDialog();
         }
 
@@ -125,7 +123,6 @@ namespace Sons_of_San_Jose
         {
             Settings set = new Settings();
             set.Location = this.Location;
-            set.WindowState = FormWindowState.Maximized;
             set.ShowDialog();
         }
 
@@ -136,7 +133,6 @@ namespace Sons_of_San_Jose
             pm.ShowIcon = false;
             pm.ifpresident = 1;
             pm.tabcontrolprint.SelectedTab = pm.tbtreasurer;
-            pm.WindowState = FormWindowState.Maximized;
             pm.ShowDialog();
         }
 
@@ -147,7 +143,6 @@ namespace Sons_of_San_Jose
             cm.ShowInTaskbar = false;
             cm.ShowIcon = false;
             cm.Location = this.Location;
-            cm.WindowState = FormWindowState.Maximized;
             cm.ShowDialog();
             
         }

@@ -212,15 +212,14 @@ namespace Sons_of_San_Jose
 
         private void btnadddel_Click(object sender, EventArgs e)
         {
-            if (txthonors.Text != "")
+            if (txthonors.Text.ToString().Trim().Length != 0)
             {
-                int count = 1;
+                int count = 0;
                 ListViewItem itm = new ListViewItem(count++.ToString());
                 itm.SubItems.Add(txthonors.Text);
                 lsthonors.Items.Add(itm);
                 allhonors += txthonors.Text + "|";
                 txthonors.Text = "";
-                MessageBox.Show(allhonors);
             }
         }
 
@@ -468,6 +467,7 @@ namespace Sons_of_San_Jose
             MySqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
+                
                 while (dr.Read())
                 {
                     updatepath =Application.StartupPath+"\\Pictures\\"+ dr["pd_photo"].ToString();
@@ -551,7 +551,7 @@ namespace Sons_of_San_Jose
                     string[] donelsthonors = allhonors.Split('|');
                     foreach (string lst in donelsthonors)
                     {
-                        if (!lst.Equals("") || !lst.Equals(" "))
+                        if (!lst.Equals("") && !lst.Equals(" "))
                         {
                             ListViewItem itm = new ListViewItem("");
                             itm.SubItems.Add(lst);
@@ -561,7 +561,7 @@ namespace Sons_of_San_Jose
                     string[] donelstotherministries = allministries.Split('|');
                     foreach (string lst in donelsthonors)
                     {
-                        if (!lst.Equals("") || !lst.Equals(" "))
+                        if (!lst.Equals("") && !lst.Equals(" "))
                         {
                             ListViewItem itm = new ListViewItem("");
                             itm.SubItems.Add(lst);
@@ -571,7 +571,7 @@ namespace Sons_of_San_Jose
                     string[] donelstawards = allawards.Split('|');
                     foreach (string lst in donelstawards)
                     {
-                        if (!lst.Equals("") || !lst.Equals(" "))
+                        if (!lst.Equals("") && !lst.Equals(" "))
                         {
                             ListViewItem itm = new ListViewItem("");
                             itm.SubItems.Add(lst);
@@ -581,7 +581,7 @@ namespace Sons_of_San_Jose
                     string[] donelstviolations = allviolations.Split('|');
                     foreach (string lst in donelstviolations)
                     {
-                        if (!lst.Equals("") || !lst.Equals(" "))
+                        if (!lst.Equals("") && !lst.Equals(" "))
                         {
                             ListViewItem itm = new ListViewItem("");
                             itm.SubItems.Add(lst);
@@ -591,7 +591,7 @@ namespace Sons_of_San_Jose
                     string[] donelstsacraments = allsacraments.Split('|');
                     foreach (string lst in donelstsacraments)
                     {
-                        if (!lst.Equals("") || !lst.Equals(" "))
+                        if (!lst.Equals("") && !lst.Equals(" "))
                         {
                             ListViewItem itm = new ListViewItem("");
                             itm.SubItems.Add(lst);
@@ -704,6 +704,7 @@ namespace Sons_of_San_Jose
                     cmd.Parameters.Add(new MySqlParameter("?md_violations", allviolations));
                     cmd.Parameters.Add(new MySqlParameter("?md_sacraments", allsacraments));
                     cmd.Parameters.Add(new MySqlParameter("?md_status", status));
+                    cmd.Parameters.Add(new MySqlParameter("?md_retrieve", "NO"));
 
                     cmd.Parameters.Add(new MySqlParameter("?pd_fullname", txtfname.Text + " " + txtmname.Text + ". " + txtlname.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_address", txtaddress.Text));
@@ -747,7 +748,11 @@ namespace Sons_of_San_Jose
                 on m.md_id = p.pd_id;
              * **/
 
-            if ((txtfname.Text == "") || (txtlname.Text == "") || (txtmname.Text == "") || (dtbday.Text == "") || (txtage.Text == "") || (txtbatch.Text == "") || (txtclassof.Text == "") || (txtaddress.Text == "") || (txtmothername.Text == "") || (txtfathername.Text == ""))
+            if ((txtfname.Text.ToString().Trim().Length == 0) || (txtlname.Text.ToString().Trim().Length == 0)
+                || (txtmname.Text.ToString().Trim().Length == 0) || (dtbday.Text.ToString().Trim().Length == 0) ||
+                (txtage.Text.ToString().Trim().Length == 0) || (txtbatch.Text.ToString().Trim().Length == 0) ||
+                (txtclassof.Text.ToString().Trim().Length == 0) || (txtaddress.Text.ToString().Trim().Length == 0) ||
+                (txtmothername.Text.ToString().Trim().Length == 0) || (txtfathername.Text.ToString().Trim().Length  == 0))
             {
                 buttom.BackColor = Color.Tomato;
 
@@ -755,7 +760,9 @@ namespace Sons_of_San_Jose
                 lblwarning.Text = "Please Complete the Personal Details !.";
                 icowarning.Visible = true;
             }
-            else if ((txtfname.Text == "") || (txtlname.Text == "") || (txtmname.Text == "") || (dtbday.Text == "") || (txtbatch.Text == "") || (txtclassof.Text == "") || (txtmothername.Text == "") || (txtfathername.Text == "") || (cmbrank.Text == "") || (cmbposition.Text == ""))
+            else if ((txtfname.Text.ToString().Trim().Length == 0) || (txtlname.Text.ToString().Trim().Length == 0) || (txtmname.Text.ToString().Trim().Length == 0) ||
+                (dtbday.Text.ToString().Trim().Length == 0) || (txtbatch.Text.ToString().Trim().Length == 0) || (txtclassof.Text.ToString().Trim().Length == 0) ||
+                (txtmothername.Text.ToString().Trim().Length == 0) || (txtfathername.Text.ToString().Trim().Length == 0) || (cmbrank.Text.ToString().Trim().Length == 0) || (cmbposition.Text.ToString().Trim().Length == 0))
             {
                 buttom.BackColor = Color.Tomato;
                 lblwarning.Visible = true;

@@ -21,6 +21,8 @@ namespace Sons_of_San_Jose
         {
             InitializeComponent();
             ListviewThrow();
+            btndelete.BackgroundImage = imageList1.Images[9];
+            btnrestore.BackgroundImage = imageList1.Images[10];
         }
         
         public static bool isUpdated = false;
@@ -317,7 +319,7 @@ namespace Sons_of_San_Jose
                 buttom.BackColor = Color.Red;
                 lblwarning.Text = "Please select Member before you Delete !.";
                 lblwarning.BackColor = Color.Red;
-                icowarning.BackgroundImage = imageList1.Images[8];
+                icowarning.BackgroundImage = imageList1.Images[5];
                 icowarning.BackColor = Color.Red;
                 lblwarning.Visible = true;
                 icowarning.Visible = true;
@@ -346,7 +348,7 @@ namespace Sons_of_San_Jose
                 icowarning.Visible = true;
                 buttom.BackColor =  lblwarning.BackColor  =   icowarning.BackColor = Color.Red;
                 lblwarning.Text = "Please select Member before you Restore !.";
-                icowarning.BackgroundImage = imageList1.Images[8];
+                icowarning.BackgroundImage = imageList1.Images[5];
             }
             MasterList.isDelete = MasterList.isUpdated = true;
         }
@@ -359,7 +361,7 @@ namespace Sons_of_San_Jose
                 timer1.Start();
                 lblwarning.Text = "Restore Member Success !.";
                 buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.MediumVioletRed;
-                icowarning.BackgroundImage = imageList1.Images[8];
+                icowarning.BackgroundImage = imageList1.Images[6];
                 lblwarning.Visible = true;
                 icowarning.Visible = true;
                 lstmasterlist.Items.Clear();
@@ -373,7 +375,7 @@ namespace Sons_of_San_Jose
                 timer1.Start();
                 lblwarning.Text = "Delete Member Success! .";
                 buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Lime;
-                icowarning.BackgroundImage = imageList1.Images[8];
+                icowarning.BackgroundImage = imageList1.Images[6];
                 lblwarning.Visible = true;
                 icowarning.Visible = true;
                 lstmasterlist.Items.Clear();

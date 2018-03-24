@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retrieve_Member));
             this.Header = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblheader = new System.Windows.Forms.Label();
             this.minimize = new System.Windows.Forms.Label();
             this.close = new System.Windows.Forms.Label();
@@ -169,6 +171,8 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.Green;
+            this.Header.Controls.Add(this.label6);
+            this.Header.Controls.Add(this.label12);
             this.Header.Controls.Add(this.lblheader);
             this.Header.Controls.Add(this.minimize);
             this.Header.Controls.Add(this.close);
@@ -179,17 +183,49 @@
             this.Header.Size = new System.Drawing.Size(1354, 66);
             this.Header.TabIndex = 142;
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Green;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("American Writer", 22F);
+            this.label6.ForeColor = System.Drawing.Color.Honeydew;
+            this.label6.Location = new System.Drawing.Point(1282, 10);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 36);
+            this.label6.TabIndex = 140;
+            this.label6.Text = "-";
+            this.label6.Click += new System.EventHandler(this.minimize_Click);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Green;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.Font = new System.Drawing.Font("American Writer", 22F);
+            this.label12.ForeColor = System.Drawing.Color.Honeydew;
+            this.label12.Location = new System.Drawing.Point(1317, 9);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 36);
+            this.label12.TabIndex = 139;
+            this.label12.Text = "x";
+            this.label12.Click += new System.EventHandler(this.close_Click);
+            // 
             // lblheader
             // 
             this.lblheader.AutoSize = true;
             this.lblheader.BackColor = System.Drawing.Color.Honeydew;
             this.lblheader.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblheader.ForeColor = System.Drawing.Color.Green;
-            this.lblheader.Location = new System.Drawing.Point(962, 21);
+            this.lblheader.Location = new System.Drawing.Point(955, 20);
             this.lblheader.Name = "lblheader";
-            this.lblheader.Size = new System.Drawing.Size(184, 23);
+            this.lblheader.Size = new System.Drawing.Size(179, 23);
             this.lblheader.TabIndex = 19;
-            this.lblheader.Text = "Deleted Members";
+            this.lblheader.Text = "Restore Members";
             // 
             // minimize
             // 
@@ -199,7 +235,7 @@
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
-            this.minimize.Location = new System.Drawing.Point(1280, 5);
+            this.minimize.Location = new System.Drawing.Point(1501, 5);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
             this.minimize.Size = new System.Drawing.Size(25, 36);
@@ -215,7 +251,7 @@
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
-            this.close.Location = new System.Drawing.Point(1315, 4);
+            this.close.Location = new System.Drawing.Point(1536, 4);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(30, 36);
@@ -1011,11 +1047,11 @@
             this.btnrestore.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnrestore.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnrestore.BorderWidth = 5;
-            this.btnrestore.CornerRadius = 28;
+            this.btnrestore.CornerRadius = 24;
             this.btnrestore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrestore.Location = new System.Drawing.Point(1005, 12);
+            this.btnrestore.Location = new System.Drawing.Point(1073, 19);
             this.btnrestore.Name = "btnrestore";
-            this.btnrestore.Size = new System.Drawing.Size(151, 58);
+            this.btnrestore.Size = new System.Drawing.Size(122, 49);
             this.btnrestore.Click += new System.EventHandler(this.btnrestore_Click);
             // 
             // icowarning
@@ -1041,11 +1077,11 @@
             this.btndelete.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btndelete.BorderColor = System.Drawing.Color.Crimson;
             this.btndelete.BorderWidth = 5;
-            this.btndelete.CornerRadius = 28;
+            this.btndelete.CornerRadius = 24;
             this.btndelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btndelete.Location = new System.Drawing.Point(1177, 12);
+            this.btndelete.Location = new System.Drawing.Point(1210, 20);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(151, 58);
+            this.btndelete.Size = new System.Drawing.Size(122, 49);
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // label5
@@ -1129,10 +1165,10 @@
             this.lstmasterlist.GridLines = true;
             this.lstmasterlist.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstmasterlist.HoverSelection = true;
-            this.lstmasterlist.Location = new System.Drawing.Point(976, 193);
+            this.lstmasterlist.Location = new System.Drawing.Point(974, 199);
             this.lstmasterlist.MultiSelect = false;
             this.lstmasterlist.Name = "lstmasterlist";
-            this.lstmasterlist.Size = new System.Drawing.Size(355, 447);
+            this.lstmasterlist.Size = new System.Drawing.Size(362, 450);
             this.lstmasterlist.TabIndex = 145;
             this.lstmasterlist.UseCompatibleStateImageBehavior = false;
             this.lstmasterlist.View = System.Windows.Forms.View.Details;
@@ -1408,7 +1444,7 @@
             this.lblsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblsearch.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblsearch.Location = new System.Drawing.Point(982, 127);
+            this.lblsearch.Location = new System.Drawing.Point(982, 125);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(180, 13);
             this.lblsearch.TabIndex = 155;
@@ -1444,6 +1480,8 @@
             this.imageList1.Images.SetKeyName(6, "save.png");
             this.imageList1.Images.SetKeyName(7, "browse.PNG");
             this.imageList1.Images.SetKeyName(8, "update.png");
+            this.imageList1.Images.SetKeyName(9, "delete.png");
+            this.imageList1.Images.SetKeyName(10, "restore.PNG");
             // 
             // timer2
             // 
@@ -1623,6 +1661,8 @@
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
 
 
     }

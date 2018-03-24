@@ -113,6 +113,10 @@
             this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.btnconnect = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.btnsecreatry = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.lblcheckuser = new System.Windows.Forms.Label();
+            this.lblcheckposition = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblnotifrightupdate = new System.Windows.Forms.Label();
             this.buttom.SuspendLayout();
             this.Header.SuspendLayout();
             this.pnlconfirmation.SuspendLayout();
@@ -227,12 +231,12 @@
             this.minimize.AutoSize = true;
             this.minimize.BackColor = System.Drawing.Color.Green;
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
             this.minimize.Location = new System.Drawing.Point(1280, 5);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 36);
+            this.minimize.Size = new System.Drawing.Size(29, 36);
             this.minimize.TabIndex = 18;
             this.minimize.Text = "-";
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
@@ -243,12 +247,12 @@
             this.close.AutoSize = true;
             this.close.BackColor = System.Drawing.Color.Green;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.close.Font = new System.Drawing.Font("American Writer", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
             this.close.Location = new System.Drawing.Point(1315, 4);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 36);
+            this.close.Size = new System.Drawing.Size(24, 36);
             this.close.TabIndex = 17;
             this.close.Text = "x";
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -405,11 +409,11 @@
             this.btnupdate.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnupdate.BorderColor = System.Drawing.Color.DeepPink;
             this.btnupdate.BorderWidth = 5;
-            this.btnupdate.CornerRadius = 27;
+            this.btnupdate.CornerRadius = 24;
             this.btnupdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnupdate.Location = new System.Drawing.Point(307, 440);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(134, 55);
+            this.btnupdate.Size = new System.Drawing.Size(122, 49);
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // pnlconfirmation
@@ -649,6 +653,8 @@
             // pnlforadmin
             // 
             this.pnlforadmin.BackColor = System.Drawing.Color.Honeydew;
+            this.pnlforadmin.Controls.Add(this.lblnotifrightupdate);
+            this.pnlforadmin.Controls.Add(this.label10);
             this.pnlforadmin.Controls.Add(this.label9);
             this.pnlforadmin.Controls.Add(this.groupBox1);
             this.pnlforadmin.Controls.Add(this.label19);
@@ -665,7 +671,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Green;
-            this.label9.Location = new System.Drawing.Point(26, 246);
+            this.label9.Location = new System.Drawing.Point(26, 224);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(178, 17);
@@ -674,6 +680,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblcheckposition);
+            this.groupBox1.Controls.Add(this.lblcheckuser);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cmbrightposition);
@@ -681,7 +689,7 @@
             this.groupBox1.Controls.Add(this.txtrightpassword);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtrightusername);
-            this.groupBox1.Location = new System.Drawing.Point(14, 266);
+            this.groupBox1.Location = new System.Drawing.Point(16, 299);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(456, 185);
             this.groupBox1.TabIndex = 111118;
@@ -800,7 +808,7 @@
             this.lstuser.FullRowSelect = true;
             this.lstuser.GridLines = true;
             this.lstuser.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lstuser.Location = new System.Drawing.Point(16, 44);
+            this.lstuser.Location = new System.Drawing.Point(10, 41);
             this.lstuser.Name = "lstuser";
             this.lstuser.Size = new System.Drawing.Size(623, 163);
             this.lstuser.TabIndex = 111112;
@@ -851,11 +859,11 @@
             this.btnrightdelete.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnrightdelete.BorderColor = System.Drawing.Color.Crimson;
             this.btnrightdelete.BorderWidth = 5;
-            this.btnrightdelete.CornerRadius = 27;
+            this.btnrightdelete.CornerRadius = 24;
             this.btnrightdelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrightdelete.Location = new System.Drawing.Point(493, 393);
+            this.btnrightdelete.Location = new System.Drawing.Point(493, 435);
             this.btnrightdelete.Name = "btnrightdelete";
-            this.btnrightdelete.Size = new System.Drawing.Size(134, 55);
+            this.btnrightdelete.Size = new System.Drawing.Size(122, 49);
             this.btnrightdelete.Click += new System.EventHandler(this.btnrightdelete_Click);
             // 
             // btnrightadd
@@ -866,11 +874,11 @@
             this.btnrightadd.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnrightadd.BorderColor = System.Drawing.Color.Green;
             this.btnrightadd.BorderWidth = 5;
-            this.btnrightadd.CornerRadius = 27;
+            this.btnrightadd.CornerRadius = 24;
             this.btnrightadd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrightadd.Location = new System.Drawing.Point(493, 249);
+            this.btnrightadd.Location = new System.Drawing.Point(493, 291);
             this.btnrightadd.Name = "btnrightadd";
-            this.btnrightadd.Size = new System.Drawing.Size(134, 55);
+            this.btnrightadd.Size = new System.Drawing.Size(122, 49);
             this.btnrightadd.Click += new System.EventHandler(this.btnrightadd_Click);
             // 
             // btnrightupdate
@@ -881,11 +889,11 @@
             this.btnrightupdate.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnrightupdate.BorderColor = System.Drawing.Color.DeepPink;
             this.btnrightupdate.BorderWidth = 5;
-            this.btnrightupdate.CornerRadius = 27;
+            this.btnrightupdate.CornerRadius = 24;
             this.btnrightupdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrightupdate.Location = new System.Drawing.Point(493, 320);
+            this.btnrightupdate.Location = new System.Drawing.Point(493, 362);
             this.btnrightupdate.Name = "btnrightupdate";
-            this.btnrightupdate.Size = new System.Drawing.Size(134, 55);
+            this.btnrightupdate.Size = new System.Drawing.Size(122, 49);
             this.btnrightupdate.Click += new System.EventHandler(this.btnrightupdate_Click);
             // 
             // rectangleShape4
@@ -1161,6 +1169,58 @@
             this.btnsecreatry.Name = "btnsecreatry";
             this.btnsecreatry.Size = new System.Drawing.Size(200, 200);
             // 
+            // lblcheckuser
+            // 
+            this.lblcheckuser.AutoSize = true;
+            this.lblcheckuser.BackColor = System.Drawing.SystemColors.Window;
+            this.lblcheckuser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcheckuser.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcheckuser.ForeColor = System.Drawing.Color.Green;
+            this.lblcheckuser.Location = new System.Drawing.Point(381, 33);
+            this.lblcheckuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcheckuser.Name = "lblcheckuser";
+            this.lblcheckuser.Size = new System.Drawing.Size(41, 14);
+            this.lblcheckuser.TabIndex = 111119;
+            this.lblcheckuser.Text = "CHECK";
+            this.lblcheckuser.Click += new System.EventHandler(this.lblcheckuser_Click);
+            // 
+            // lblcheckposition
+            // 
+            this.lblcheckposition.AutoSize = true;
+            this.lblcheckposition.BackColor = System.Drawing.SystemColors.Window;
+            this.lblcheckposition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcheckposition.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcheckposition.ForeColor = System.Drawing.Color.Green;
+            this.lblcheckposition.Location = new System.Drawing.Point(365, 130);
+            this.lblcheckposition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcheckposition.Name = "lblcheckposition";
+            this.lblcheckposition.Size = new System.Drawing.Size(41, 14);
+            this.lblcheckposition.TabIndex = 111120;
+            this.lblcheckposition.Text = "CHECK";
+            this.lblcheckposition.Click += new System.EventHandler(this.lblcheckposition_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(26, 249);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(308, 15);
+            this.label10.TabIndex = 111119;
+            this.label10.Text = "Note: Check the username and position before you update";
+            // 
+            // lblnotifrightupdate
+            // 
+            this.lblnotifrightupdate.AutoSize = true;
+            this.lblnotifrightupdate.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.lblnotifrightupdate.ForeColor = System.Drawing.Color.Red;
+            this.lblnotifrightupdate.Location = new System.Drawing.Point(26, 281);
+            this.lblnotifrightupdate.Name = "lblnotifrightupdate";
+            this.lblnotifrightupdate.Size = new System.Drawing.Size(184, 15);
+            this.lblnotifrightupdate.TabIndex = 111120;
+            this.lblnotifrightupdate.Text = "Note: the update is now available!";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1288,5 +1348,9 @@
         private System.Windows.Forms.TextBox lblpassword;
         private System.Windows.Forms.TextBox lblcposition;
         private System.Windows.Forms.TextBox lblcusername;
+        private System.Windows.Forms.Label lblcheckuser;
+        private System.Windows.Forms.Label lblcheckposition;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblnotifrightupdate;
     }
 }

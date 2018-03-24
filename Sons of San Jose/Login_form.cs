@@ -80,7 +80,7 @@ namespace Sons_of_San_Jose
         }
 
         private void label7_Click(object sender, EventArgs e)
-        {  ExitForm ef = new ExitForm(); ef.ShowDialog(); }
+        { ExitForm ef = new ExitForm();  ef.ShowDialog(); }
 
         private void label10_Click(object sender, EventArgs e)
         { this.WindowState = FormWindowState.Minimized; }
@@ -97,6 +97,32 @@ namespace Sons_of_San_Jose
         string position;
         public void AllUser()
         {
+
+            string qq = "SELECT count(*) FROM dbms_mass.user;";
+            cmd = new MySqlCommand(qq, db.OpenConnection());
+            MySqlDataReader r = cmd.ExecuteReader();
+
+            if (r.HasRows)
+            {
+                while (r.Read())
+                {
+                    if (Convert.ToInt32(r[0].ToString()) == 0)
+                    {
+                        cmd = new MySqlCommand("CreateUser", db.OpenConnection());
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        try
+                        {
+                            cmd.Parameters.Add(new MySqlParameter("?user_name", "admin"));
+                            cmd.Parameters.Add(new MySqlParameter("?user_password", "admin"));
+                            cmd.Parameters.Add(new MySqlParameter("?user_position", "Admin"));
+                            cmd.ExecuteNonQuery();
+                            db.CloseConnection();
+                        }
+                        catch { }
+                    }
+                }
+            }
+
 
             string q = "SELECT * FROM dbms_mass.user WHERE user_name ='" + txtname.Text.Replace("'", "''") + "'AND user_password ='" + txtpass.Text.Replace("'", "''") + "';";
             cmd = new MySqlCommand(q, db.OpenConnection());
@@ -192,7 +218,9 @@ namespace Sons_of_San_Jose
                             pnllogin.Visible = true;
                             pnllogin.BringToFront();
                         }
-                        else { lblnoitfconnect.Text = "Your Database Connection is not Valid."; }
+                        else {
+                           // lblnoitfconnect.Text = "Your Database Connection is not Valid.";
+                        }
                         lblnoitfconnect.Visible = true;
                     }
                     catch
@@ -240,8 +268,7 @@ namespace Sons_of_San_Jose
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Notification_Input ni = new Notification_Input();
-            ni.ShowDialog();
+         
         }
 
         private void txtname_KeyPress(object sender, KeyPressEventArgs e)
@@ -276,7 +303,7 @@ namespace Sons_of_San_Jose
             {
                 pnlconnection.Visible = true;
                 pnlconnection.BringToFront();
-                lbleditdbconnection.Enabled = false;
+                lbleditdbconnection.Enabled = lblcreateaccount.Enabled = false;
                 pnllogin.Visible = false;
                 ifedit = false;
                 timer1.Stop();
@@ -284,6 +311,12 @@ namespace Sons_of_San_Jose
             }
             else { lbleditdbconnection.Enabled = true; }
 
+        }
+
+        private void lblcreateaccount_Click(object sender, EventArgs e)
+        {
+            Notification_Input ni = new Notification_Input();
+            ni.ShowDialog();
         }
 
     }

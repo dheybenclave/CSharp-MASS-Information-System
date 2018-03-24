@@ -205,15 +205,15 @@
             // 
             // lblheader
             // 
-            this.lblheader.AutoSize = true;
             this.lblheader.BackColor = System.Drawing.Color.Honeydew;
             this.lblheader.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblheader.ForeColor = System.Drawing.Color.Green;
-            this.lblheader.Location = new System.Drawing.Point(974, 21);
+            this.lblheader.Location = new System.Drawing.Point(897, 20);
             this.lblheader.Name = "lblheader";
-            this.lblheader.Size = new System.Drawing.Size(110, 23);
+            this.lblheader.Size = new System.Drawing.Size(264, 23);
             this.lblheader.TabIndex = 19;
             this.lblheader.Text = "Master List";
+            this.lblheader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblheader.Click += new System.EventHandler(this.lblheader_Click);
             // 
             // minimize
@@ -222,12 +222,12 @@
             this.minimize.AutoSize = true;
             this.minimize.BackColor = System.Drawing.Color.Green;
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
             this.minimize.Location = new System.Drawing.Point(1211, 5);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 36);
+            this.minimize.Size = new System.Drawing.Size(29, 36);
             this.minimize.TabIndex = 18;
             this.minimize.Text = "-";
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
@@ -238,12 +238,12 @@
             this.close.AutoSize = true;
             this.close.BackColor = System.Drawing.Color.Green;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.close.Font = new System.Drawing.Font("American Writer", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
             this.close.Location = new System.Drawing.Point(1246, 4);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 36);
+            this.close.Size = new System.Drawing.Size(24, 36);
             this.close.TabIndex = 17;
             this.close.Text = "x";
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -300,10 +300,10 @@
             // btnretrieve
             // 
             this.btnretrieve.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
-            this.btnretrieve.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnretrieve.BackColor = System.Drawing.Color.Tomato;
             this.btnretrieve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnretrieve.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.btnretrieve.BorderColor = System.Drawing.Color.Green;
+            this.btnretrieve.BorderColor = System.Drawing.Color.DarkOrange;
             this.btnretrieve.BorderWidth = 5;
             this.btnretrieve.CornerRadius = 30;
             this.btnretrieve.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -370,7 +370,7 @@
             this.lblwarning.BackColor = System.Drawing.Color.Lime;
             this.lblwarning.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblwarning.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblwarning.Location = new System.Drawing.Point(83, 26);
+            this.lblwarning.Location = new System.Drawing.Point(87, 30);
             this.lblwarning.Name = "lblwarning";
             this.lblwarning.Size = new System.Drawing.Size(163, 23);
             this.lblwarning.TabIndex = 109;
@@ -409,11 +409,11 @@
             this.btnprint.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnprint.BorderColor = System.Drawing.Color.DimGray;
             this.btnprint.BorderWidth = 5;
-            this.btnprint.CornerRadius = 28;
+            this.btnprint.CornerRadius = 24;
             this.btnprint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnprint.Location = new System.Drawing.Point(615, 13);
+            this.btnprint.Location = new System.Drawing.Point(715, 18);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(151, 58);
+            this.btnprint.Size = new System.Drawing.Size(122, 49);
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // icowarning
@@ -439,11 +439,11 @@
             this.btndelete.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btndelete.BorderColor = System.Drawing.Color.Crimson;
             this.btndelete.BorderWidth = 5;
-            this.btndelete.CornerRadius = 28;
+            this.btndelete.CornerRadius = 24;
             this.btndelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btndelete.Location = new System.Drawing.Point(1115, 13);
+            this.btndelete.Location = new System.Drawing.Point(1144, 18);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(151, 58);
+            this.btndelete.Size = new System.Drawing.Size(122, 49);
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnadd
@@ -454,11 +454,11 @@
             this.btnadd.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnadd.BorderColor = System.Drawing.Color.Green;
             this.btnadd.BorderWidth = 5;
-            this.btnadd.CornerRadius = 28;
+            this.btnadd.CornerRadius = 24;
             this.btnadd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnadd.Location = new System.Drawing.Point(783, 13);
+            this.btnadd.Location = new System.Drawing.Point(858, 18);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(151, 58);
+            this.btnadd.Size = new System.Drawing.Size(122, 49);
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // btnupdate
@@ -469,11 +469,11 @@
             this.btnupdate.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnupdate.BorderColor = System.Drawing.Color.DeepPink;
             this.btnupdate.BorderWidth = 5;
-            this.btnupdate.CornerRadius = 28;
+            this.btnupdate.CornerRadius = 24;
             this.btnupdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnupdate.Location = new System.Drawing.Point(951, 13);
+            this.btnupdate.Location = new System.Drawing.Point(1001, 18);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(151, 58);
+            this.btnupdate.Size = new System.Drawing.Size(122, 49);
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // lstmasterlist
@@ -1575,7 +1575,7 @@
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Honeydew;
-            this.label5.Location = new System.Drawing.Point(1233, 93);
+            this.label5.Location = new System.Drawing.Point(1236, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 14);
             this.label5.TabIndex = 113;

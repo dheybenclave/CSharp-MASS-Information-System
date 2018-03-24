@@ -148,7 +148,6 @@
             this.lblcoordinatortreasurer = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.lbltreasurer = new System.Windows.Forms.Label();
-            this.lbldatetreasurer = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
@@ -164,6 +163,7 @@
             this.txttreasurercoordinator = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.txttreasurer = new System.Windows.Forms.TextBox();
+            this.lbldatetreasurer = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.buttom.SuspendLayout();
             this.tabcontrolprint.SuspendLayout();
@@ -190,15 +190,15 @@
             // 
             // lblheader
             // 
-            this.lblheader.AutoSize = true;
             this.lblheader.BackColor = System.Drawing.Color.Honeydew;
             this.lblheader.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblheader.ForeColor = System.Drawing.Color.Green;
-            this.lblheader.Location = new System.Drawing.Point(964, 18);
+            this.lblheader.Location = new System.Drawing.Point(900, 21);
             this.lblheader.Name = "lblheader";
-            this.lblheader.Size = new System.Drawing.Size(134, 23);
+            this.lblheader.Size = new System.Drawing.Size(288, 23);
             this.lblheader.TabIndex = 19;
             this.lblheader.Text = "Printing Form";
+            this.lblheader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // minimize
             // 
@@ -206,12 +206,12 @@
             this.minimize.AutoSize = true;
             this.minimize.BackColor = System.Drawing.Color.Green;
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
             this.minimize.Location = new System.Drawing.Point(1280, 5);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 36);
+            this.minimize.Size = new System.Drawing.Size(29, 36);
             this.minimize.TabIndex = 18;
             this.minimize.Text = "-";
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
@@ -222,12 +222,12 @@
             this.close.AutoSize = true;
             this.close.BackColor = System.Drawing.Color.Green;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.close.Font = new System.Drawing.Font("American Writer", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
             this.close.Location = new System.Drawing.Point(1315, 4);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 36);
+            this.close.Size = new System.Drawing.Size(24, 36);
             this.close.TabIndex = 17;
             this.close.Text = "x";
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -339,11 +339,11 @@
             this.btnprint.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnprint.BorderColor = System.Drawing.Color.DimGray;
             this.btnprint.BorderWidth = 5;
-            this.btnprint.CornerRadius = 28;
+            this.btnprint.CornerRadius = 24;
             this.btnprint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnprint.Location = new System.Drawing.Point(1142, 12);
+            this.btnprint.Location = new System.Drawing.Point(1195, 15);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(151, 58);
+            this.btnprint.Size = new System.Drawing.Size(122, 49);
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // icowarning
@@ -981,6 +981,7 @@
             this.cmbdate.Name = "cmbdate";
             this.cmbdate.Size = new System.Drawing.Size(274, 23);
             this.cmbdate.TabIndex = 157;
+            this.cmbdate.SelectedIndexChanged += new System.EventHandler(this.cmbdate_SelectedIndexChanged);
             this.cmbdate.SelectedValueChanged += new System.EventHandler(this.cmbdate_SelectedValueChanged);
             // 
             // label16
@@ -1615,17 +1616,6 @@
             this.lbltreasurer.TabIndex = 167;
             this.lbltreasurer.Text = "TREASURER";
             // 
-            // lbldatetreasurer
-            // 
-            this.lbldatetreasurer.AutoSize = true;
-            this.lbldatetreasurer.BackColor = System.Drawing.Color.Honeydew;
-            this.lbldatetreasurer.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            this.lbldatetreasurer.Location = new System.Drawing.Point(92, 184);
-            this.lbldatetreasurer.Name = "lbldatetreasurer";
-            this.lbldatetreasurer.Size = new System.Drawing.Size(87, 15);
-            this.lbldatetreasurer.TabIndex = 147;
-            this.lbldatetreasurer.Text = "Date Submitted";
-            // 
             // label50
             // 
             this.label50.AutoSize = true;
@@ -1790,6 +1780,17 @@
             this.txttreasurer.TabIndex = 159;
             this.txttreasurer.TextChanged += new System.EventHandler(this.txttreasurer_TextChanged);
             // 
+            // lbldatetreasurer
+            // 
+            this.lbldatetreasurer.AutoSize = true;
+            this.lbldatetreasurer.BackColor = System.Drawing.Color.Honeydew;
+            this.lbldatetreasurer.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.lbldatetreasurer.Location = new System.Drawing.Point(92, 184);
+            this.lbldatetreasurer.Name = "lbldatetreasurer";
+            this.lbldatetreasurer.Size = new System.Drawing.Size(87, 15);
+            this.lbldatetreasurer.TabIndex = 147;
+            this.lbldatetreasurer.Text = "Date Submitted";
+            // 
             // Printing_Masterlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1927,7 +1928,6 @@
         private System.Windows.Forms.Label lblcoordinatortreasurer;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label lbltreasurer;
-        private System.Windows.Forms.Label lbldatetreasurer;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
@@ -1965,5 +1965,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label T;
         private System.Windows.Forms.Label lblbudget;
+        private System.Windows.Forms.Label lbldatetreasurer;
     }
 }

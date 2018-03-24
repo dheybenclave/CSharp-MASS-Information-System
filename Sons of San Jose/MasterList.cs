@@ -35,7 +35,7 @@ namespace Sons_of_San_Jose
             btnupdate.BackgroundImage = imageList1.Images[1];
             btndelete.BackgroundImage = imageList1.Images[2];
             btnmasterlist.BackgroundImage = imageList1.Images[6];
-            btnretrieve.BackgroundImage = imageList1.Images[7];
+            btnretrieve.BackgroundImage = imageList1.Images[6];
             btnprint.BackgroundImage = imageList1.Images[9];
             ListviewThrow();
             txtsearch2.Enabled = false;
@@ -287,7 +287,6 @@ namespace Sons_of_San_Jose
         private void btnadd_Click(object sender, EventArgs e)
         {
             am.lblheader.Location = new Point(916, 18);
-            am.WindowState = this.WindowState;
             am.lblheader.Text = "Adding Member's";
             Add_Members.pid = null;
             am.ShowDialog();
@@ -298,7 +297,6 @@ namespace Sons_of_San_Jose
             {
                 am.lblheader.Text = "Updating Member's";
                 Add_Members.pid = pid;
-                am.WindowState = this.WindowState;
                 am.lblheader.Location = new Point(901, 18);
                 am.ShowDialog();
                 pid = null;
@@ -319,6 +317,7 @@ namespace Sons_of_San_Jose
         private void btnupdate_Click(object sender, EventArgs e)
         {
             UpdateFunction();
+            reset();
         }
 
         private void btndelete_Click(object sender, EventArgs e)
@@ -625,7 +624,6 @@ namespace Sons_of_San_Jose
         {
             Printing_Masterlist pm = new Printing_Masterlist();
             pm.ifpresident = 1;
-            pm.WindowState = FormWindowState.Maximized;
             pm.ShowDialog();
         }
 
@@ -647,13 +645,12 @@ namespace Sons_of_San_Jose
         {
             Retrieve_Member rm = new Retrieve_Member();
             rm.Location = this.Location;
-            rm.WindowState = FormWindowState.Maximized;
             rm.ShowDialog();
         }
 
         private void btnsecretary_MouseEnter(object sender, EventArgs e)
         {
-            lblstatus.Text = "Retrieve Member";
+            lblstatus.Text = "Deleted Member";
             btnretrieve.BorderColor = Color.White;
             btnretrieve.BackColor = Color.White;
         }
@@ -661,8 +658,8 @@ namespace Sons_of_San_Jose
         private void btnsecretary_MouseLeave(object sender, EventArgs e)
         {
             lblstatus.Text = " ";
-            btnretrieve.BorderColor = Color.Green;
-            btnretrieve.BackColor = Color.SeaGreen;
+            btnretrieve.BorderColor = Color.Tomato;
+            btnretrieve.BackColor = Color.DarkOrange;
         }
 
         private void cmbcategorysearch_SelectedIndexChanged(object sender, EventArgs e)

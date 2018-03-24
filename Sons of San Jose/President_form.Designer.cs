@@ -59,12 +59,12 @@
             this.close.AutoSize = true;
             this.close.BackColor = System.Drawing.Color.Green;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.close.Font = new System.Drawing.Font("American Writer", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
             this.close.Location = new System.Drawing.Point(1315, 4);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 36);
+            this.close.Size = new System.Drawing.Size(24, 36);
             this.close.TabIndex = 15;
             this.close.Tag = "close";
             this.close.Text = "x";
@@ -76,12 +76,12 @@
             this.minimize.AutoSize = true;
             this.minimize.BackColor = System.Drawing.Color.Green;
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
             this.minimize.Location = new System.Drawing.Point(1280, 5);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 36);
+            this.minimize.Size = new System.Drawing.Size(29, 36);
             this.minimize.TabIndex = 16;
             this.minimize.Tag = "minimize";
             this.minimize.Text = "-";
@@ -331,7 +331,6 @@
             this.Name = "President_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "President_form";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.President_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

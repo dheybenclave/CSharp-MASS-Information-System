@@ -41,7 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblcreateaccount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,7 +69,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbleditdbconnection = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.entityInstantFeedbackSource1 = new DevExpress.Data.Linq.EntityInstantFeedbackSource();
             this.pnllogin.SuspendLayout();
             this.pnlconnection.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -220,20 +219,20 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label6
+            // lblcreateaccount
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Underline);
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(13, 507);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 12);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Create account?..";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lblcreateaccount.AutoSize = true;
+            this.lblcreateaccount.BackColor = System.Drawing.Color.Transparent;
+            this.lblcreateaccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcreateaccount.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Underline);
+            this.lblcreateaccount.ForeColor = System.Drawing.Color.Red;
+            this.lblcreateaccount.Location = new System.Drawing.Point(13, 507);
+            this.lblcreateaccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcreateaccount.Name = "lblcreateaccount";
+            this.lblcreateaccount.Size = new System.Drawing.Size(80, 12);
+            this.lblcreateaccount.TabIndex = 9;
+            this.lblcreateaccount.Text = "Create account?..";
+            this.lblcreateaccount.Click += new System.EventHandler(this.lblcreateaccount_Click);
             // 
             // label7
             // 
@@ -241,12 +240,12 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Green;
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label7.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Honeydew;
-            this.label7.Location = new System.Drawing.Point(985, 5);
+            this.label7.Location = new System.Drawing.Point(994, 8);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 36);
+            this.label7.Size = new System.Drawing.Size(24, 35);
             this.label7.TabIndex = 0;
             this.label7.Text = "x";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -257,12 +256,12 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Green;
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label10.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Honeydew;
-            this.label10.Location = new System.Drawing.Point(952, 6);
+            this.label10.Location = new System.Drawing.Point(961, 9);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 36);
+            this.label10.Size = new System.Drawing.Size(28, 35);
             this.label10.TabIndex = 0;
             this.label10.Text = "-";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -593,7 +592,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblcreateaccount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlconnection);
@@ -629,7 +628,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblcreateaccount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape btnlogin;
@@ -658,7 +657,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbleditdbconnection;
         public System.Windows.Forms.Timer timer1;
-        private DevExpress.Data.Linq.EntityInstantFeedbackSource entityInstantFeedbackSource1;
+        //private DevExpress.Data.Linq.EntityInstantFeedbackSource entityInstantFeedbackSource1;
     }
 }
 

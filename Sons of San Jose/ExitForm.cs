@@ -64,11 +64,11 @@ namespace Sons_of_San_Jose
                         catch { }
                         cmd.ExecuteNonQuery();
                         db.CloseConnection();
-                         Retrieve_Member.isDelete = MasterList.isUpdated = true;
+                        Retrieve_Member.isDelete = MasterList.isUpdated = true;
                         this.Close();
                     }
-                    else {}
-                    
+                    else { }
+
                     if (ifrestore == true)
                     {
 
@@ -77,13 +77,16 @@ namespace Sons_of_San_Jose
                         cmd.ExecuteNonQuery();
                         db.CloseConnection();
                         Retrieve_Member.ifrestore = true;
-                  
+
                         this.Close();
                     }
                     else { }
                 }
                 else
-                { Application.ExitThread(); userretrieve = ifrestore = false; }
+                {
+                    Application.ExitThread(); userretrieve = ifrestore = false;
+
+                }
             }
             catch { userretrieve = ifrestore = false; }
         }

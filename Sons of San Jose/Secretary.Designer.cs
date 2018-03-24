@@ -173,12 +173,12 @@
             this.minimize.AutoSize = true;
             this.minimize.BackColor = System.Drawing.Color.Green;
             this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
             this.minimize.ForeColor = System.Drawing.Color.Honeydew;
             this.minimize.Location = new System.Drawing.Point(1280, 6);
             this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 36);
+            this.minimize.Size = new System.Drawing.Size(29, 36);
             this.minimize.TabIndex = 18;
             this.minimize.Text = "-";
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
@@ -189,12 +189,12 @@
             this.close.AutoSize = true;
             this.close.BackColor = System.Drawing.Color.Green;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.close.Font = new System.Drawing.Font("American Writer", 22F);
             this.close.ForeColor = System.Drawing.Color.Honeydew;
             this.close.Location = new System.Drawing.Point(1315, 5);
             this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(30, 36);
+            this.close.Size = new System.Drawing.Size(24, 36);
             this.close.TabIndex = 17;
             this.close.Text = "x";
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -242,7 +242,7 @@
             this.lblwarning.BackColor = System.Drawing.Color.Tomato;
             this.lblwarning.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblwarning.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblwarning.Location = new System.Drawing.Point(95, 26);
+            this.lblwarning.Location = new System.Drawing.Point(95, 32);
             this.lblwarning.Name = "lblwarning";
             this.lblwarning.Size = new System.Drawing.Size(301, 23);
             this.lblwarning.TabIndex = 108;
@@ -282,11 +282,11 @@
             this.btnprint.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnprint.BorderColor = System.Drawing.Color.DimGray;
             this.btnprint.BorderWidth = 5;
-            this.btnprint.CornerRadius = 28;
+            this.btnprint.CornerRadius = 24;
             this.btnprint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnprint.Location = new System.Drawing.Point(1178, 14);
+            this.btnprint.Location = new System.Drawing.Point(1206, 20);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(151, 58);
+            this.btnprint.Size = new System.Drawing.Size(122, 49);
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // rectangleShape4
@@ -305,11 +305,11 @@
             this.btnmasterlistview.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnmasterlistview.BorderColor = System.Drawing.Color.SeaGreen;
             this.btnmasterlistview.BorderWidth = 5;
-            this.btnmasterlistview.CornerRadius = 28;
+            this.btnmasterlistview.CornerRadius = 24;
             this.btnmasterlistview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmasterlistview.Location = new System.Drawing.Point(1005, 14);
+            this.btnmasterlistview.Location = new System.Drawing.Point(1060, 19);
             this.btnmasterlistview.Name = "btnmasterlistview";
-            this.btnmasterlistview.Size = new System.Drawing.Size(151, 58);
+            this.btnmasterlistview.Size = new System.Drawing.Size(122, 49);
             this.btnmasterlistview.Click += new System.EventHandler(this.btnmasterlistview_Click);
             // 
             // icowarning
@@ -322,7 +322,7 @@
             this.icowarning.BorderWidth = 5;
             this.icowarning.CornerRadius = 30;
             this.icowarning.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.icowarning.Location = new System.Drawing.Point(26, 8);
+            this.icowarning.Location = new System.Drawing.Point(26, 12);
             this.icowarning.Name = "icowarning";
             this.icowarning.Size = new System.Drawing.Size(60, 60);
             this.icowarning.Visible = false;
@@ -353,7 +353,7 @@
             // 
             this.c1.DisplayIndex = 1;
             this.c1.Text = "Master List";
-            this.c1.Width = 300;
+            this.c1.Width = 355;
             // 
             // c0
             // 
@@ -412,11 +412,11 @@
             this.btnaddtoattendace.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnaddtoattendace.BorderColor = System.Drawing.Color.Green;
             this.btnaddtoattendace.BorderWidth = 5;
-            this.btnaddtoattendace.CornerRadius = 27;
+            this.btnaddtoattendace.CornerRadius = 24;
             this.btnaddtoattendace.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnaddtoattendace.Location = new System.Drawing.Point(289, 591);
+            this.btnaddtoattendace.Location = new System.Drawing.Point(321, 592);
             this.btnaddtoattendace.Name = "btnaddtoattendace";
-            this.btnaddtoattendace.Size = new System.Drawing.Size(147, 55);
+            this.btnaddtoattendace.Size = new System.Drawing.Size(122, 49);
             this.btnaddtoattendace.Click += new System.EventHandler(this.btnsecretary_Click);
             // 
             // rectangleShape1
@@ -646,7 +646,7 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Century Gothic", 7F);
             this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(93, 599);
+            this.label38.Location = new System.Drawing.Point(144, 601);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(155, 30);
             this.label38.TabIndex = 164;
@@ -753,13 +753,13 @@
             // 
             // lblposition
             // 
-            this.lblposition.AutoSize = true;
             this.lblposition.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.lblposition.Location = new System.Drawing.Point(183, 343);
+            this.lblposition.Location = new System.Drawing.Point(3, 335);
             this.lblposition.Name = "lblposition";
-            this.lblposition.Size = new System.Drawing.Size(60, 16);
+            this.lblposition.Size = new System.Drawing.Size(427, 24);
             this.lblposition.TabIndex = 165;
             this.lblposition.Text = "POSITION";
+            this.lblposition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbphoto
             // 
@@ -792,25 +792,25 @@
             this.lblfullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblfullname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfullname.ForeColor = System.Drawing.Color.Green;
-            this.lblfullname.Location = new System.Drawing.Point(24, 312);
+            this.lblfullname.Location = new System.Drawing.Point(3, 312);
             this.lblfullname.Name = "lblfullname";
-            this.lblfullname.Size = new System.Drawing.Size(382, 20);
+            this.lblfullname.Size = new System.Drawing.Size(427, 20);
             this.lblfullname.TabIndex = 169;
             this.lblfullname.Text = "Full Name";
             this.lblfullname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbladdto
             // 
-            this.lbladdto.AutoSize = true;
             this.lbladdto.BackColor = System.Drawing.Color.SeaGreen;
             this.lbladdto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbladdto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbladdto.ForeColor = System.Drawing.Color.Honeydew;
-            this.lbladdto.Location = new System.Drawing.Point(153, 382);
+            this.lbladdto.Location = new System.Drawing.Point(126, 378);
             this.lbladdto.Name = "lbladdto";
-            this.lbladdto.Size = new System.Drawing.Size(124, 17);
+            this.lbladdto.Size = new System.Drawing.Size(177, 20);
             this.lbladdto.TabIndex = 167;
             this.lbladdto.Text = "MOVE TO ABSENT";
+            this.lbladdto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbladdto.Click += new System.EventHandler(this.btnaddto_Click);
             // 
             // shapeContainer5
@@ -834,7 +834,7 @@
             this.btnaddto.BorderWidth = 5;
             this.btnaddto.CornerRadius = 21;
             this.btnaddto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnaddto.Location = new System.Drawing.Point(114, 369);
+            this.btnaddto.Location = new System.Drawing.Point(116, 369);
             this.btnaddto.Name = "btnaddto";
             this.btnaddto.Size = new System.Drawing.Size(200, 43);
             this.btnaddto.Click += new System.EventHandler(this.btnaddto_Click);
@@ -883,7 +883,7 @@
             this.lblsearch2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblsearch2.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsearch2.ForeColor = System.Drawing.Color.Green;
-            this.lblsearch2.Location = new System.Drawing.Point(979, 182);
+            this.lblsearch2.Location = new System.Drawing.Point(975, 181);
             this.lblsearch2.Name = "lblsearch2";
             this.lblsearch2.Size = new System.Drawing.Size(106, 13);
             this.lblsearch2.TabIndex = 167;

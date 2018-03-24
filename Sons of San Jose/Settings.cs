@@ -291,6 +291,8 @@ namespace Sons_of_San_Jose
             txtrightusername.Text = lst_username;
             txtrightpassword.Text = lst_password;
             cmbrightposition.Text = lst_position;
+            btnrightupdate.Enabled = false;
+            lblnotifrightupdate.Text = "Note: the update is not available! right now";
          
           
         }
@@ -356,58 +358,33 @@ namespace Sons_of_San_Jose
             }
         }
 
-        private void btnrightupdate_Click(object sender, EventArgs e)
+        string getcurpos;
+        bool isexistposition, isexistname, no_id = false;
+        private void lblcheckuser_Click(object sender, EventArgs e)
         {
 
-            string qq = "SELECT * FROM user WHERE user_position ='" + cmbrightposition.Text + "' ;";
-            adapt = new MySqlDataAdapter(qq, db.OpenConnection());
+            string query = "SELECT * FROM dbms_mass.user where user_name='" + txtrightusername.Text + "' and not user_name ='" + lst_username+ "' ;";
+            adapt = new MySqlDataAdapter(query, db.OpenConnection());
             dt.Clear();
             adapt.Fill(dt);
 
-            if (dt.Rows.Count != 0)
+            if (dt.Rows.Count != 0) { isexistname = true; }
+
+            if (txtrightusername.Text.ToString().Trim().Length != 0)
             {
-                timer1.Enabled = true;
-                timer1.Start();
-                icowarning.Visible = true;
-                lblwarning.Visible = true;
-                icowarning.BackgroundImage = imageList1.Images[3];
-                lblwarning.Text = cmbrightposition.Text + " has already Exist! .";
-                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
-                txtrightpassword.Text = txtrightusername.Text = cmbrightposition.Text = "";
-            }
-            else
-            {
-                if (txtrightpassword.Text != "" && txtrightusername.Text != "" && lst_id == "")
+                if (isexistname)
                 {
-                    timer1.Enabled = true;
-                    timer1.Start();
-                    icowarning.Visible = true;
-                    lblwarning.Visible = true;
-                    icowarning.BackgroundImage = imageList1.Images[2];
-                    lblwarning.Text = "Please Select User to before Update .";
-                    buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
-                    txtrightusername.Text = txtrightpassword.Text = cmbrightposition.Text = "";
-                    lst_id = "";
-                }
-                if (txtrightpassword.Text != "" && txtrightusername.Text != "" && lst_id != "")
-                {
-                    string q = "UPDATE `dbms_mass`.`user` SET `user_name`='" + txtrightusername.Text.Replace("'", "''") +
-                                "', `user_password`='" + txtrightpassword.Text.Replace("'", "''") + "', `user_position`='" + cmbrightposition.Text +
-                                                                                                            "' WHERE `user_id`='" + lst_id + "';";
-                    cmd = new MySqlCommand(q, db.OpenConnection());
-                    cmd.ExecuteNonQuery();
-                    db.CloseConnection();
-                    AllUser();
 
                     timer1.Enabled = true;
                     timer1.Start();
                     icowarning.Visible = true;
                     lblwarning.Visible = true;
-                    icowarning.BackgroundImage = imageList1.Images[2];
-                    lblwarning.Text = "Update Account Success! .";
-                    buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.MediumVioletRed;
-                    txtrightusername.Text = txtrightpassword.Text = cmbrightposition.Text = "";
-                    lst_id = "";
+                    icowarning.BackgroundImage = imageList1.Images[3];
+                    lblwarning.Text = txtrightusername.Text + " has already Exist!.";
+                    buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                    no_id = true;
+                    btnupdate.Enabled = false;
+                    //txtrightpassword.Text = txtrightusername.Text = cmbrightposition.Text = "";
                 }
                 else
                 {
@@ -416,10 +393,150 @@ namespace Sons_of_San_Jose
                     icowarning.Visible = true;
                     lblwarning.Visible = true;
                     icowarning.BackgroundImage = imageList1.Images[3];
-                    lblwarning.Text = "Please Fiil All Details! .";
-                    buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                    lblwarning.Text = "Your username is available! .";
+
+                    buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Lime;
+                    isexistname = false;
                 }
             }
+            else {
+                timer1.Enabled = true;
+                timer1.Start();
+                icowarning.Visible = true;
+                lblwarning.Visible = true;
+                icowarning.BackgroundImage = imageList1.Images[3];
+                lblwarning.Text = "Please fiil the username!";
+                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                no_id = true;
+                btnupdate.Enabled = false;
+            }
+
+
+            if (isexistname == false && isexistposition == false)
+            {
+                btnrightupdate.Enabled = true;
+                lblnotifrightupdate.Text = "Note: the update is now available!";
+            }
+
+        }
+
+
+        private void lblcheckposition_Click(object sender, EventArgs e)
+        {
+            getcurpos = lst_position;
+
+
+            string qq = "SELECT * FROM dbms_mass.user WHERE user_position ='" + cmbrightposition.Text + "' and not user_position ='" + getcurpos + "' ;";
+            adapt = new MySqlDataAdapter(qq, db.OpenConnection());
+            dt.Clear();
+            adapt.Fill(dt);
+            if (dt.Rows.Count != 0) { isexistposition = true; }
+
+            if (isexistposition)
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+                icowarning.Visible = true;
+                lblwarning.Visible = true;
+                icowarning.BackgroundImage = imageList1.Images[3];
+                lblwarning.Text = cmbrightposition.Text + " has already Exist! .";
+                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                //txtrightpassword.Text = txtrightusername.Text = cmbrightposition.Text = "";
+                btnupdate.Enabled = false;
+            }
+            else
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+                icowarning.Visible = true;
+                lblwarning.Visible = true;
+                icowarning.BackgroundImage = imageList1.Images[3];
+                lblwarning.Text = "Your position is available! .";
+
+                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Lime;
+                isexistname = false;
+            }
+
+            if (isexistname == false && isexistposition == false)
+            {
+                btnrightupdate.Enabled = true;
+                lblnotifrightupdate.Text = "Note: the update is now available!";
+            }
+
+        }
+
+        private void btnrightupdate_Click(object sender, EventArgs e)
+        {
+
+            if (isexistname == true && isexistposition == true)
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+                icowarning.Visible = true;
+                lblwarning.Visible = true;
+                icowarning.BackgroundImage = imageList1.Images[3];
+                lblwarning.Text = "Both username and position has already exist!";
+                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                no_id = true;
+            }
+
+
+
+            if (lst_id == null)
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+                icowarning.Visible = true;
+                lblwarning.Visible = true;
+                icowarning.BackgroundImage = imageList1.Images[2];
+                lblwarning.Text = "Please Select User to before Update .";
+                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                txtrightusername.Text = txtrightpassword.Text = cmbrightposition.Text = "";
+                lst_id = "";
+                no_id = true;
+            }
+            else
+            {
+                if (txtrightpassword.Text != "" && txtrightusername.Text != "")
+                {
+
+                    if (isexistname == false && isexistposition == false)
+                    {
+                        string q = "UPDATE `dbms_mass`.`user` SET `user_name`='" + txtrightusername.Text.Replace("'", "''") +
+                                    "', `user_password`='" + txtrightpassword.Text.Replace("'", "''") + "', `user_position`='" + cmbrightposition.Text +
+                                                                                                                "' WHERE `user_id`='" + lst_id + "';";
+                        cmd = new MySqlCommand(q, db.OpenConnection());
+                        cmd.ExecuteNonQuery();
+                        db.CloseConnection();
+                        AllUser();
+
+                        timer1.Enabled = true;
+                        timer1.Start();
+                        icowarning.Visible = true;
+                        lblwarning.Visible = true;
+                        icowarning.BackgroundImage = imageList1.Images[2];
+                        lblwarning.Text = "Update Account Success! .";
+                        buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.MediumVioletRed;
+                        txtrightusername.Text = txtrightpassword.Text = cmbrightposition.Text = "";
+                        lst_id = "";
+                        btnrightupdate.Enabled = true;
+                    }
+                }
+                else
+                {
+                    if (no_id == false)
+                    {
+                        timer1.Enabled = true;
+                        timer1.Start();
+                        icowarning.Visible = true;
+                        lblwarning.Visible = true;
+                        icowarning.BackgroundImage = imageList1.Images[3];
+                        lblwarning.Text = "Please Fiil All Details! .";
+                        buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
+                    }
+                }
+            }
+
         }
 
         private void btnrightdelete_Click(object sender, EventArgs e)
@@ -517,6 +634,10 @@ namespace Sons_of_San_Jose
 
             }
         }
+
+
+
+
 
     }
 }

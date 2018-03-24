@@ -441,8 +441,8 @@ namespace Sons_of_San_Jose
 
         private void dttreasurer_ValueChanged(object sender, EventArgs e)
         {
-            if (lbltreasurer.Text == "Date Submmitted") { lbltreasurer.Text = DateTime.Now.ToString("MMMM dd, yyyyy"); }
-            else { lbltreasurer.Text = dttreasurer.Value.ToLongDateString(); }
+            if (lbldatetreasurer.Text == "Date Submmitted") { lbldatetreasurer.Text = DateTime.Now.ToString("MMMM dd, yyyyy"); }
+            else { lbldatetreasurer.Text = dttreasurer.Value.ToLongDateString(); }
         }
 
         private void txtbudget_TextChanged(object sender, EventArgs e)
@@ -483,6 +483,11 @@ namespace Sons_of_San_Jose
         }
 
         private void label36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbdate_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
