@@ -29,14 +29,14 @@ namespace Sons_of_San_Jose
         List<int> present = new List<int>();
         List<string> chkdidperson = new List<string>();
         Dictionary<string, bool> idIsChecked = new Dictionary<string, bool>();
-        string filter, donefill, pd_id_lst, ad_id,filename = "";
+        string filter, donefill, pd_id_lst, ad_id, filename = "";
         public bool istrue, counttrue = false;
+        string getcurrdate = "";
 
-        
         public Secretary()
         {
             InitializeComponent();
-          
+
             p.X = (Screen.PrimaryScreen.Bounds.Width / 2) - (this.Size.Width / 2);
             p.Y = (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Size.Height / 2);
             this.Location = p;
@@ -54,13 +54,14 @@ namespace Sons_of_San_Jose
             //btnsecretary.BackgroundImage = imageList1.Images[11];
             btnmasterlistview.BackgroundImage = imageList1.Images[9];
             btnaddtoattendace.BackgroundImage = imageList1.Images[8];
+            btndelete.BackgroundImage = imageList1.Images[2];
             btnprint.BackgroundImage = imageList1.Images[12];
             btnsettings.BackgroundImage = imageList1.Images[14];
         }
         private void close_Click(object sender, EventArgs e)
         {
-            if (ifpresident == 1) this.Close(); 
-            else { ExitForm ex = new ExitForm(); ex.ShowDialog();}
+            if (ifpresident == 1) this.Close();
+            else { ExitForm ex = new ExitForm(); ex.ShowDialog(); }
         }
         private void minimize_Click(object sender, EventArgs e)
         { this.WindowState = FormWindowState.Minimized; }
@@ -92,29 +93,33 @@ namespace Sons_of_San_Jose
         }
         public void LoadPresent()
         {
-            present.Clear();
-            rdpresent.Checked = true;
-            lstmasterlistright.Items.Clear();
-            string q = "SELECT ad.ad_id,ad.pd_id, p.pd_fullname, m.md_status FROM dbms_mass.attendance ad inner join p_details p ON " +
-                            "p.pd_id = ad.pd_id inner join  m_details m ON  p.pd_id = m.md_id WHERE ad.ad_date = '" + cmbdate.Text + "' AND m.md_status ='Active' AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;";
-            adapt = new MySqlDataAdapter(q, db.OpenConnection());
-            DataTable dtt = new DataTable();
-            dtt.Clear();
-            adapt.Fill(dtt);
-            db.CloseConnection();
-            foreach (DataRow r in dtt.Rows)
+            try
             {
-                present.Add(Convert.ToInt32((r[1])));
-                ListViewItem itm = new ListViewItem(r[0].ToString());
-                itm.SubItems.Add(r[1].ToString());
-                itm.SubItems.Add(r[2].ToString().Replace("_", " "));
-                lstmasterlistright.Items.Add(itm);
+                present.Clear();
+                rdpresent.Checked = true;
+                getcurrdate = cmbdate.Text;
+                lstmasterlistright.Items.Clear();
+                string q = "SELECT ad.ad_id,ad.pd_id, p.pd_fullname, m.md_status FROM dbms_mass.attendance ad inner join p_details p ON " +
+                                "p.pd_id = ad.pd_id inner join  m_details m ON  p.pd_id = m.md_id WHERE ad.ad_date = '" + cmbdate.Text + "' AND m.md_status ='Active' AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;";
+                adapt = new MySqlDataAdapter(q, db.OpenConnection());
+                DataTable dtt = new DataTable();
+                dtt.Clear();
+                adapt.Fill(dtt);
+                db.CloseConnection();
+                foreach (DataRow r in dtt.Rows)
+                {
+                    present.Add(Convert.ToInt32((r[1])));
+                    ListViewItem itm = new ListViewItem(r[0].ToString());
+                    itm.SubItems.Add(r[1].ToString());
+                    itm.SubItems.Add(r[2].ToString().Replace("_", " "));
+                    lstmasterlistright.Items.Add(itm);
+                }
             }
+            catch { }
         }
 
         public void LoadAbsent()
         {
-
             try
             {
                 rdabsent.Checked = true;
@@ -124,13 +129,12 @@ namespace Sons_of_San_Jose
 
                 for (int i = 0; i < present.Count; i++)
                 {
-                    filter += "'" + present[i] + "',"; //1,2,3,
-                    donefill = "(" + filter + ")";//(1,2,3,)
+                    filter += "'" + present[i] + "',";
+                    donefill = "(" + filter + ")";
 
                 }
 
-                donefill = donefill.Replace(",)", ")"); // (1,2,3)
-
+                donefill = donefill.Replace(",)", ")");
                 string q = "SELECT p.pd_id, p.pd_fullname, m.md_status FROM dbms_mass.p_details p inner join  m_details m ON " +
                             "  p.pd_id = m.md_id WHERE pd_id NOT IN" + donefill + " AND m.md_status ='Active' AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;";
                 adapt = new MySqlDataAdapter(q, db.OpenConnection());
@@ -146,7 +150,7 @@ namespace Sons_of_San_Jose
                 present.Clear();
                 filter = "";
             }
-            catch(Exception ex){}
+            catch { }
         }
 
 
@@ -155,7 +159,7 @@ namespace Sons_of_San_Jose
             table.Clear();
             idIsChecked.Clear();
             adapt = new MySqlDataAdapter("SELECT p.pd_id, p.pd_fullname, m.md_status FROM p_details p inner join" +
-                                         " m_details m ON  p.pd_id = m.md_id WHERE m.md_status ='Active'  AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;", db.OpenConnection());
+                                            " m_details m ON  p.pd_id = m.md_id WHERE m.md_status ='Active'  AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;", db.OpenConnection());
             db.CloseConnection();
             adapt.Fill(table);
 
@@ -211,13 +215,13 @@ namespace Sons_of_San_Jose
                     try
                     {
                         if (idIsChecked[s])
-                            cmd = new MySqlCommand("SaveAttendance", db.OpenConnection());
+                        cmd = new MySqlCommand("SaveAttendance", db.OpenConnection());
                         cmd.CommandType = CommandType.StoredProcedure;
                         try
                         {
-                            
+                            present.Add(Convert.ToInt32(s));
                             cmd.Parameters.Add(new MySqlParameter("?pd_id", s));
-                            cmd.Parameters.Add(new MySqlParameter("?ad_date",dtaddattendance.Value.ToString("yyyy-MM-dd") ));
+                            cmd.Parameters.Add(new MySqlParameter("?ad_date", dtaddattendance.Value.ToString("yyyy-MM-dd")));
                             cmd.ExecuteNonQuery();
                             db.CloseConnection();
                             ComboBoxDate();
@@ -230,9 +234,9 @@ namespace Sons_of_San_Jose
                             lblwarning.Text = " Add Attendance Success! .";
                             buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Lime;
                         }
-                        catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+                        catch (Exception ex) { }
                     }
-                    catch (Exception ex) { MessageBox.Show(ex.ToString()); }  
+                    catch (Exception ex) { }
                 }
             }
             else
@@ -242,7 +246,7 @@ namespace Sons_of_San_Jose
                 icowarning.Visible = true;
                 lblwarning.Visible = true;
                 icowarning.BackgroundImage = imageList1.Images[4];
-                lblwarning.Text = Convert.ToDateTime(dtaddattendance.Text).ToString("MMMM dd, yyyy") +" is Already Exsit! .";
+                lblwarning.Text = Convert.ToDateTime(dtaddattendance.Text).ToString("MMMM dd, yyyy") + " is Already Exsit! .";
                 buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Tomato;
             }
             chkselectall.Checked = false;
@@ -261,7 +265,7 @@ namespace Sons_of_San_Jose
         private void Secretary_Load(object sender, EventArgs e)
         {
 
-            if (ifpresident == 1) { btnmasterlistview.Visible = false; this.ShowInTaskbar = false; btnsettings.Visible = false;  }
+            if (ifpresident == 1) { btnmasterlistview.Visible = false; this.ShowInTaskbar = false; btnsettings.Visible = false; }
             else { btnmasterlistview.Visible = true; this.ShowInTaskbar = true; btnsettings.Visible = true; }
         }
 
@@ -287,11 +291,25 @@ namespace Sons_of_San_Jose
 
         private void btndelete_Click(object sender, EventArgs e)
         {
+  
+            string q = "DELETE FROM `dbms_mass`.`attendance` WHERE `ad_date`='"+cmbdate.Text+"';";
+            cmd = new MySqlCommand(q, db.OpenConnection());
+            cmd.ExecuteNonQuery();
+            db.CloseConnection();
 
+            timer1.Enabled = true;
+            timer1.Start();
+            icowarning.Visible = true;
+            lblwarning.Visible = true;
+            icowarning.BackgroundImage = imageList1.Images[4];
+            lblwarning.Text ="Delete Attendance Success!";
+            buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.SeaGreen;
         }
 
         private void cmbdate_SelectedIndexChanged(object sender, EventArgs e)
         {
+            getcurrdate = cmbdate.Text;
+            
             LoadPresent();
             if (rdpresent.Checked == true) { LoadPresent(); }
             if (rdabsent.Checked == true) { LoadAbsent(); }
@@ -342,7 +360,7 @@ namespace Sons_of_San_Jose
 
         private void rdabsent_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdabsent.Checked == true) { lblstatusattendance.Text = "Absent"; lbladdto.Text = "MOVE TO PRESENT"; }
+            if (rdabsent.Checked == true) { lblstatusattendance.Text = "Absent"; lbladdto.Text = "MOVE TO PRESENT"; LoadAbsent(); }
             else { lblstatusattendance.Text = "Present"; lbladdto.Text = "MOVE TO ABSENT"; }
         }
 
@@ -366,7 +384,7 @@ namespace Sons_of_San_Jose
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             allmembers.Clear();
-            string q = "SELECT p.pd_id, p.pd_fullname FROM p_details p inner join  m_details m ON p.pd_id = m.md_id "+
+            string q = "SELECT p.pd_id, p.pd_fullname FROM p_details p inner join  m_details m ON p.pd_id = m.md_id " +
                     " WHERE pd_fullname LIKE'%" + txtsearch.Text + "%' AND m.md_status ='Active' AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;";
             adapt = new MySqlDataAdapter(q, db.OpenConnection());
             table = new DataTable();
@@ -399,8 +417,6 @@ namespace Sons_of_San_Jose
 
         private void txtsearch2_TextChanged(object sender, EventArgs e)
         {
-
-           
             if (txtsearch2.Text == "")
             {
                 lblsearch2.Visible = true;
@@ -420,7 +436,7 @@ namespace Sons_of_San_Jose
                 }
                 else
                 {
-                    string forabsent = "SELECT p.pd_id, p.pd_fullname, m.md_status FROM dbms_mass.p_details p inner join m_details m "+
+                    string forabsent = "SELECT p.pd_id, p.pd_fullname, m.md_status FROM dbms_mass.p_details p inner join m_details m " +
                                        "ON p.pd_id = m.md_id WHERE ( pd_id NOT IN " + donefill +
                                        " AND pd_fullname LIKE'%" + txtsearch2.Text + "%' ) AND m.md_status ='Active' AND m.md_retrieve ='NO' ORDER BY pd_lastname ASC;";
                     selectedquery = forabsent;
@@ -447,9 +463,7 @@ namespace Sons_of_San_Jose
                         itm.SubItems.Add(rd[1].ToString().Replace("_", " "));
                     }
                     lstmasterlistright.Items.Add(itm);
-
                 }
-
             }
         }
 
@@ -471,16 +485,45 @@ namespace Sons_of_San_Jose
             if (ifpresident == 1) { pm.ifpresident = 1; }
             else { pm.ifpresident = 0; }
             pm.ShowDialog();
-           
+
         }
 
         private void btnaddto_Click(object sender, EventArgs e)
         {
             if (lbladdto.Text == "MOVE TO ABSENT")
             {
-                string q = "DELETE FROM `dbms_mass`.`attendance` WHERE `ad_id`='"+ad_id+"';";
+
+                string q = "DELETE FROM `dbms_mass`.`attendance` WHERE `ad_id`='" + ad_id + "';";
                 cmd = new MySqlCommand(q, db.OpenConnection());
                 cmd.ExecuteNonQuery();
+
+                string qq = "SELECT * FROM attendance WHERE ad_date='" + getcurrdate + "';";
+                adapt = new MySqlDataAdapter(qq, db.OpenConnection());
+                table = new DataTable();
+                table.Clear();
+ 
+                adapt.Fill(table);
+           
+                if (table.Rows.Count == 0)
+                {
+                    present.Clear();
+                    cmd = new MySqlCommand("SaveAttendance", db.OpenConnection());
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    try
+                    {
+                        cmd.Parameters.Add(new MySqlParameter("?pd_id", "0"));
+                        cmd.Parameters.Add(new MySqlParameter("?ad_date", getcurrdate));
+                        cmd.ExecuteNonQuery();
+                        LoadPresent();
+                    }
+                    catch { }
+                }
+                else {
+
+
+                }
+                db.CloseConnection();
+
                 LoadPresent();
             }
             else if (lbladdto.Text == "MOVE TO PRESENT")
@@ -518,7 +561,7 @@ namespace Sons_of_San_Jose
 
         private void btnsettings_MouseEnter(object sender, EventArgs e)
         {
-          // lblstatus.Text = "Settings";
+            // lblstatus.Text = "Settings";
             btnsettings.BorderColor = Color.White;
             btnsettings.BackColor = Color.White;
         }

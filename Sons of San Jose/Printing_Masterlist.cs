@@ -61,7 +61,6 @@ namespace Sons_of_San_Jose
             if (dt.Rows.Count > 0)
             {
                 try
-
                 {
                     if (lbldate.Text == "Date Submitted")
                     { lbldate.Text = DateTime.Now.Date.ToLongDateString(); }
@@ -110,17 +109,17 @@ namespace Sons_of_San_Jose
                                 columns = 3;
                             }
                         }
-                        
+
                         e_worksheet.Cells[rows, columns] = countnumber++ + ". " + r[0].ToString().Replace("_", " ");
                         rows++;
                         if (counttrue == true) { counternextpage++; }
 
                     }
 
-                    int lastrows = rows+2;
+                    int lastrows = rows + 2;
                     int counter = 1;
-                    e_worksheet.Cells[15, 2].Value = "From                           :          " + lblcoordinator.Text ;
-                    e_worksheet.Cells[22, 2].Value = "Malugod pong ipinababatid sa lahat ang bagong listahan ng mga pangalan ng "+dt.Rows.Count+" na ";
+                    e_worksheet.Cells[15, 2].Value = "From                           :          " + lblcoordinator.Text;
+                    e_worksheet.Cells[22, 2].Value = "Malugod pong ipinababatid sa lahat ang bagong listahan ng mga pangalan ng " + dt.Rows.Count + " na ";
                     e_worksheet.Cells[lastrows + counter++, 2].Value = "Ang mga pangalan sa itaas ay binibigyan ng mga karapatan, pribilehiyo, tungkulin ";
                     e_worksheet.Cells[lastrows + counter++, 2].Value = "at responsibilidad na naangkop sa isang miyembro ng ministry. ";
                     e_worksheet.Cells[lastrows + counter++ + 3, 2].Value = " ";
@@ -138,12 +137,24 @@ namespace Sons_of_San_Jose
                     e_worksheet.Cells[lastrows + counter++ + 3, 2].Value = " ";
                     e_worksheet.Cells[lastrows + counter++, 2].Value = lblparishpriest.Text;
                     e_worksheet.Cells[lastrows + counter++, 2].Value = "Parish Priest";
-                   // e_worksheet.Cells.get_Item(i, 2).Value;
-                    filename = "masterlistreportnew" + DateTime.Now.Second + DateTime.Now.Date.Month + DateTime.Now.Day + DateTime.Now.Year ;
-                 //   e_worlbook.SaveAs(Application.StartupPath + "\\Reports\\" +filename+ ".xlsx", e_missing, e_missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
+                    // e_worksheet.Cells.get_Item(i, 2).Value;
+                    filename = "masterlistreportnew" + DateTime.Now.Second + DateTime.Now.Date.Month + DateTime.Now.Day + DateTime.Now.Year;
+                    //   e_worlbook.SaveAs(Application.StartupPath + "\\Reports\\" +filename+ ".xlsx", e_missing, e_missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
                 }
                 catch (Exception ex)
                 { MessageBox.Show(ex.ToString()); }
+            }
+            else
+            {
+                timer1.Start();
+                timer1.Enabled = true;
+                buttom.BackColor = Color.Tomato;
+                lblwarning.BackColor = Color.Tomato;
+                lblwarning.Text = "No Active Found in Member! ";
+                icowarning.BackgroundImage = imageList1.Images[3];
+                icowarning.BackColor = Color.Tomato;
+                lblwarning.Visible = true;
+                icowarning.Visible = true;
             }
         }
         public void ComboBoxDate()
@@ -205,7 +216,7 @@ namespace Sons_of_San_Jose
 
                     foreach (DataRow r in dt.Rows)
                     {
-                       
+
 
                         if (dt.Rows.Count > 38)
                         {
@@ -242,10 +253,22 @@ namespace Sons_of_San_Jose
                     e_worksheet.Cells[lastrows + counter++, 2].Value = "Secretary, Ministry of Altar server";
                     // e_worksheet.Cells.get_Item(i, 2).Value;
                     filename = "attendancereport" + DateTime.Now.Second + DateTime.Now.Date.Month + DateTime.Now.Day + DateTime.Now.Year;
-                  //  e_worlbook.SaveAs(Application.StartupPath + "\\Reports\\" + filename + ".xlsx", e_missing, e_missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
+                    //  e_worlbook.SaveAs(Application.StartupPath + "\\Reports\\" + filename + ".xlsx", e_missing, e_missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange);
                 }
                 catch (Exception ex)
                 { MessageBox.Show(ex.ToString()); }
+            }
+            else
+            {
+                timer1.Start();
+                timer1.Enabled = true;
+                buttom.BackColor = Color.Tomato;
+                lblwarning.BackColor = Color.Tomato;
+                lblwarning.Text = "No Active Found in Member! ";
+                icowarning.BackgroundImage = imageList1.Images[3];
+                icowarning.BackColor = Color.Tomato;
+                lblwarning.Visible = true;
+                icowarning.Visible = true;
             }
         }
 
@@ -273,6 +296,7 @@ namespace Sons_of_San_Jose
         }
         private void btnprint_Click(object sender, EventArgs e)
         {
+
             if (tabcontrolprint.SelectedTab == tbmasterlist)
             {
                 if (txtchairperson.Text == "" || txtcoordinator.Text == "" || txtparishpriest.Text == "")
@@ -281,6 +305,7 @@ namespace Sons_of_San_Jose
                     timer1.Enabled = true;
                     buttom.BackColor = Color.Tomato;
                     lblwarning.BackColor = Color.Tomato;
+                    lblwarning.Text = "Please complete the Details !.";
                     icowarning.BackgroundImage = imageList1.Images[3];
                     icowarning.BackColor = Color.Tomato;
                     lblwarning.Visible = true;
@@ -298,6 +323,7 @@ namespace Sons_of_San_Jose
                     timer1.Enabled = true;
                     buttom.BackColor = Color.Tomato;
                     lblwarning.BackColor = Color.Tomato;
+                    lblwarning.Text = "Please complete the Details !.";
                     icowarning.BackgroundImage = imageList1.Images[3];
                     icowarning.BackColor = Color.Tomato;
                     lblwarning.Visible = true;
@@ -315,6 +341,7 @@ namespace Sons_of_San_Jose
                     timer1.Enabled = true;
                     buttom.BackColor = Color.Tomato;
                     lblwarning.BackColor = Color.Tomato;
+                    lblwarning.Text = "Please complete the Details !.";
                     icowarning.BackgroundImage = imageList1.Images[3];
                     icowarning.BackColor = Color.Tomato;
                     lblwarning.Visible = true;

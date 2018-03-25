@@ -139,5 +139,11 @@ namespace Sons_of_San_Jose
 
             }
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
     }
 }

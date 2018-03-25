@@ -49,6 +49,7 @@
             this.pnllogin = new System.Windows.Forms.Panel();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.pnlconnection = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblnoitfconnect = new System.Windows.Forms.Label();
             this.btnshow = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -242,12 +243,13 @@
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Honeydew;
-            this.label7.Location = new System.Drawing.Point(994, 8);
+            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
+            this.label7.Location = new System.Drawing.Point(991, 8);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 35);
+            this.label7.Size = new System.Drawing.Size(21, 35);
             this.label7.TabIndex = 0;
-            this.label7.Text = "x";
+            this.label7.Text = " ";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label10
@@ -258,12 +260,13 @@
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Honeydew;
+            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
             this.label10.Location = new System.Drawing.Point(961, 9);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 35);
+            this.label10.Size = new System.Drawing.Size(21, 35);
             this.label10.TabIndex = 0;
-            this.label10.Text = "-";
+            this.label10.Text = " ";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label8
@@ -303,7 +306,7 @@
             this.pnllogin.Controls.Add(this.lblnotification);
             this.pnllogin.Controls.Add(this.shapeContainer2);
             this.pnllogin.Controls.Add(this.txtpass);
-            this.pnllogin.Location = new System.Drawing.Point(32, 83);
+            this.pnllogin.Location = new System.Drawing.Point(32, 85);
             this.pnllogin.Name = "pnllogin";
             this.pnllogin.Size = new System.Drawing.Size(393, 403);
             this.pnllogin.TabIndex = 0;
@@ -322,6 +325,7 @@
             // 
             // pnlconnection
             // 
+            this.pnlconnection.Controls.Add(this.label6);
             this.pnlconnection.Controls.Add(this.lblnoitfconnect);
             this.pnlconnection.Controls.Add(this.btnshow);
             this.pnlconnection.Controls.Add(this.label15);
@@ -341,13 +345,26 @@
             this.pnlconnection.Size = new System.Drawing.Size(393, 403);
             this.pnlconnection.TabIndex = 22;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(32, 300);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(327, 15);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Note : this password is your database password (in workbench)";
+            // 
             // lblnoitfconnect
             // 
             this.lblnoitfconnect.AutoSize = true;
             this.lblnoitfconnect.BackColor = System.Drawing.Color.Transparent;
             this.lblnoitfconnect.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.lblnoitfconnect.ForeColor = System.Drawing.Color.Red;
-            this.lblnoitfconnect.Location = new System.Drawing.Point(59, 313);
+            this.lblnoitfconnect.Location = new System.Drawing.Point(50, 358);
             this.lblnoitfconnect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnoitfconnect.Name = "lblnoitfconnect";
             this.lblnoitfconnect.Size = new System.Drawing.Size(165, 16);
@@ -388,10 +405,10 @@
             // txtpassword
             // 
             this.txtpassword.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.txtpassword.Location = new System.Drawing.Point(143, 276);
+            this.txtpassword.Location = new System.Drawing.Point(127, 276);
             this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Size = new System.Drawing.Size(184, 21);
+            this.txtpassword.Size = new System.Drawing.Size(200, 21);
             this.txtpassword.TabIndex = 5;
             this.txtpassword.UseSystemPasswordChar = true;
             this.txtpassword.TextChanged += new System.EventHandler(this.txtpassword_TextChanged);
@@ -412,11 +429,12 @@
             // txtusername
             // 
             this.txtusername.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.txtusername.Location = new System.Drawing.Point(142, 235);
+            this.txtusername.Location = new System.Drawing.Point(126, 235);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(184, 21);
+            this.txtusername.Size = new System.Drawing.Size(200, 21);
             this.txtusername.TabIndex = 4;
+            this.txtusername.Text = "root";
             // 
             // label13
             // 
@@ -424,7 +442,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label13.ForeColor = System.Drawing.Color.Green;
-            this.label13.Location = new System.Drawing.Point(49, 235);
+            this.label13.Location = new System.Drawing.Point(51, 235);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 16);
@@ -434,11 +452,11 @@
             // txtdatabase
             // 
             this.txtdatabase.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.txtdatabase.Location = new System.Drawing.Point(142, 192);
+            this.txtdatabase.Location = new System.Drawing.Point(126, 192);
             this.txtdatabase.Margin = new System.Windows.Forms.Padding(4);
             this.txtdatabase.Name = "txtdatabase";
             this.txtdatabase.ReadOnly = true;
-            this.txtdatabase.Size = new System.Drawing.Size(184, 21);
+            this.txtdatabase.Size = new System.Drawing.Size(200, 21);
             this.txtdatabase.TabIndex = 3;
             this.txtdatabase.Text = "dbms_mass";
             // 
@@ -448,7 +466,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label12.ForeColor = System.Drawing.Color.Green;
-            this.label12.Location = new System.Drawing.Point(48, 192);
+            this.label12.Location = new System.Drawing.Point(50, 192);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 16);
@@ -458,11 +476,12 @@
             // txtport
             // 
             this.txtport.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.txtport.Location = new System.Drawing.Point(142, 149);
+            this.txtport.Location = new System.Drawing.Point(126, 149);
             this.txtport.Margin = new System.Windows.Forms.Padding(4);
             this.txtport.Name = "txtport";
-            this.txtport.Size = new System.Drawing.Size(184, 21);
+            this.txtport.Size = new System.Drawing.Size(200, 21);
             this.txtport.TabIndex = 2;
+            this.txtport.Text = "3306";
             // 
             // label11
             // 
@@ -470,7 +489,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label11.ForeColor = System.Drawing.Color.Green;
-            this.label11.Location = new System.Drawing.Point(91, 149);
+            this.label11.Location = new System.Drawing.Point(84, 149);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 16);
@@ -480,11 +499,12 @@
             // txtserver
             // 
             this.txtserver.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.txtserver.Location = new System.Drawing.Point(142, 110);
+            this.txtserver.Location = new System.Drawing.Point(126, 110);
             this.txtserver.Margin = new System.Windows.Forms.Padding(4);
             this.txtserver.Name = "txtserver";
-            this.txtserver.Size = new System.Drawing.Size(184, 21);
+            this.txtserver.Size = new System.Drawing.Size(200, 21);
             this.txtserver.TabIndex = 1;
+            this.txtserver.Text = "localhost";
             // 
             // label9
             // 
@@ -492,7 +512,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label9.ForeColor = System.Drawing.Color.Green;
-            this.label9.Location = new System.Drawing.Point(76, 110);
+            this.label9.Location = new System.Drawing.Point(71, 110);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 16);
@@ -520,11 +540,11 @@
             this.btnconnect.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.btnconnect.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnconnect.BorderWidth = 5;
-            this.btnconnect.CornerRadius = 21;
+            this.btnconnect.CornerRadius = 19;
             this.btnconnect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnconnect.Location = new System.Drawing.Point(130, 343);
+            this.btnconnect.Location = new System.Drawing.Point(233, 346);
             this.btnconnect.Name = "btnconnect";
-            this.btnconnect.Size = new System.Drawing.Size(139, 42);
+            this.btnconnect.Size = new System.Drawing.Size(119, 38);
             this.btnconnect.Click += new System.EventHandler(this.btnconnect_Click);
             // 
             // btnsecreatry
@@ -657,6 +677,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbleditdbconnection;
         public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label6;
         //private DevExpress.Data.Linq.EntityInstantFeedbackSource entityInstantFeedbackSource1;
     }
 }

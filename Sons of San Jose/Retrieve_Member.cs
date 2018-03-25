@@ -28,6 +28,7 @@ namespace Sons_of_San_Jose
         public static bool isUpdated = false;
         public static bool isDelete = false;
         public static bool ifrestore = false;
+        string searchval;
 
            public string refresh;
         //for personal data;
@@ -383,7 +384,20 @@ namespace Sons_of_San_Jose
                 reset();
                 isDelete = false;
             }
-            if (ifrestore == true) { lstmasterlist.Items.Clear(); ListviewThrow(); ifrestore = false; }
+            if (ifrestore == true) {
+                timer1.Start();
+                lblwarning.Text = "Restore Member Success! .";
+                buttom.BackColor = icowarning.BackColor = lblwarning.BackColor = Color.Lime;
+                icowarning.BackgroundImage = imageList1.Images[6];
+                lblwarning.Visible = true;
+                icowarning.Visible = true;
+                lstmasterlist.Items.Clear();
+                ListviewThrow();
+                reset();
+                isDelete = false;
+                lstmasterlist.Items.Clear(); 
+                ListviewThrow(); 
+                ifrestore = false; }
         }
 
         private void buttom_Paint(object sender, PaintEventArgs e)
@@ -394,6 +408,52 @@ namespace Sons_of_San_Jose
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lblsearch_Click(object sender, EventArgs e)
+        {
+            txtsearch.Focus();
+            lblsearch.Visible = false;
+        }
+
+        private void txtsearch_Click(object sender, EventArgs e)
+        {
+            txtsearch.Focus();
+            lblsearch.Visible = false;
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtsearch.Text.ToString().Trim().Length == 0)
+            {
+                lblsearch.Visible = true;
+            }
+            else
+            {
+                txtsearch.Focus();
+                lblsearch.Visible = false;
+            }
+            string search = txtsearch.Text.Replace("'", "''").Replace(" ", "_");
+            lstmasterlist.Items.Clear();
+            searchval = "select * from  p_details p inner join e_details e on  e.ed_id = p.pd_id " +
+               "inner join m_details m on m.md_id = p.pd_id  Where ( pd_fullname Like '%" + search + "%' OR  pd_address LIKE'%" + search + "%'" +
+               "OR  pd_birthday LIKE'%" + search + "%' OR  pd_birthplace LIKE'%" + search + "%'" +
+               "OR  pd_age LIKE'%" + search + "%' OR  pd_email LIKE'%" + search + "%'" +
+               "OR  pd_contactnumber LIKE'%" + search + "%' OR  pd_batch LIKE'%" + search + "%'" +
+               "OR  pd_mothername LIKE'%" + search + "%' OR  pd_motheroccupation LIKE'%" + search + "%'" +
+               "OR  pd_fathername LIKE'%" + search + "%' OR  pd_fatheroccupation LIKE'%" + search + "%'" +
+               "OR  pd_contactnumbermother LIKE'%" + search + "%' OR  pd_contactnumberfather LIKE'%" + search + "%'" +
+               "OR  ed_primary_school LIKE'%" + search + "%' OR  ed_primary_year LIKE'%" + search + "%'" +
+               "OR  ed_secondary_school LIKE'%" + search + "%' OR  ed_secondary_year LIKE'%" + search + "%'" +
+               "OR  ed_tertiary_school LIKE'%" + search + "%' OR  ed_tertiary_year LIKE'%" + search + "%'" +
+               "OR  ed_tertiary_course LIKE'%" + search + "%' OR  ed_vocational_school LIKE'%" + search + "%'" +
+               "OR  ed_vocational_year LIKE'%" + search + "%' OR  ed_vocational_course LIKE'%" + search + "%'" +
+               "OR  ed_honors LIKE'%" + search + "%' OR  md_rank LIKE'%" + search + "%'" +
+               "OR  md_position LIKE'%" + search + "%' OR  md_dateofinvest LIKE'%" + search + "%'" +
+               "OR  md_dateofpromote LIKE'%" + search + "%' OR  md_otherministries LIKE'%" + search + "%'" +
+               "OR  md_awards LIKE'%" + search + "%' OR  md_violations LIKE'%" + search + "%'" +
+               "OR  md_sacraments LIKE'%" + search + "%' OR  md_status LIKE'" + search + "%' " + " ) AND m.md_retrieve ='YES' ORDER BY pd_lastname ASC";
+            AllDetails(searchval);
         }
     }
 }

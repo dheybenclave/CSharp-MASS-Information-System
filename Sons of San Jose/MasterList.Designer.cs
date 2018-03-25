@@ -33,8 +33,6 @@
             this.Header = new System.Windows.Forms.Panel();
             this.lblstatus = new System.Windows.Forms.Label();
             this.lblheader = new System.Windows.Forms.Label();
-            this.minimize = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Label();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -167,6 +165,8 @@
             this.lblsearch2 = new System.Windows.Forms.Label();
             this.lblcmbsearch = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.panel2.SuspendLayout();
             this.buttom.SuspendLayout();
@@ -180,10 +180,10 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.Green;
+            this.Header.Controls.Add(this.label1);
+            this.Header.Controls.Add(this.label6);
             this.Header.Controls.Add(this.lblstatus);
             this.Header.Controls.Add(this.lblheader);
-            this.Header.Controls.Add(this.minimize);
-            this.Header.Controls.Add(this.close);
             this.Header.Controls.Add(this.shapeContainer4);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(69, 0);
@@ -215,38 +215,6 @@
             this.lblheader.Text = "Master List";
             this.lblheader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblheader.Click += new System.EventHandler(this.lblheader_Click);
-            // 
-            // minimize
-            // 
-            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize.AutoSize = true;
-            this.minimize.BackColor = System.Drawing.Color.Green;
-            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
-            this.minimize.ForeColor = System.Drawing.Color.Honeydew;
-            this.minimize.Location = new System.Drawing.Point(1211, 5);
-            this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(29, 36);
-            this.minimize.TabIndex = 18;
-            this.minimize.Text = "-";
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // close
-            // 
-            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close.AutoSize = true;
-            this.close.BackColor = System.Drawing.Color.Green;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("American Writer", 22F);
-            this.close.ForeColor = System.Drawing.Color.Honeydew;
-            this.close.Location = new System.Drawing.Point(1246, 4);
-            this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(24, 36);
-            this.close.TabIndex = 17;
-            this.close.Text = "x";
-            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // shapeContainer4
             // 
@@ -1621,6 +1589,40 @@
             this.groupBox3.TabIndex = 116;
             this.groupBox3.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Green;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Honeydew;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(1245, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 35);
+            this.label1.TabIndex = 23;
+            this.label1.Text = " ";
+            this.label1.Click += new System.EventHandler(this.close_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Green;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Honeydew;
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.Location = new System.Drawing.Point(1215, 9);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 35);
+            this.label6.TabIndex = 24;
+            this.label6.Text = " ";
+            this.label6.Click += new System.EventHandler(this.minimize_Click);
+            // 
             // MasterList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1669,8 +1671,6 @@
 
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Label lblheader;
-        private System.Windows.Forms.Label minimize;
-        private System.Windows.Forms.Label close;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private System.Windows.Forms.Panel panel2;
@@ -1804,6 +1804,8 @@
         private System.Windows.Forms.ColumnHeader c35;
         private System.Windows.Forms.ColumnHeader c36;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape btnretrieve;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
 
     }
 }

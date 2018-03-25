@@ -39,8 +39,6 @@
             this.Header = new System.Windows.Forms.Panel();
             this.lblstatus = new System.Windows.Forms.Label();
             this.lblheader = new System.Windows.Forms.Label();
-            this.minimize = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Label();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.label20 = new System.Windows.Forms.Label();
@@ -75,6 +73,8 @@
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.rtfieldtext = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.buttom.SuspendLayout();
             this.Header.SuspendLayout();
             this.grpstatus.SuspendLayout();
@@ -156,10 +156,10 @@
             // 
             this.Header.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Header.BackColor = System.Drawing.Color.Green;
+            this.Header.Controls.Add(this.label7);
+            this.Header.Controls.Add(this.label10);
             this.Header.Controls.Add(this.lblstatus);
             this.Header.Controls.Add(this.lblheader);
-            this.Header.Controls.Add(this.minimize);
-            this.Header.Controls.Add(this.close);
             this.Header.Controls.Add(this.shapeContainer4);
             this.Header.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Header.Location = new System.Drawing.Point(0, 0);
@@ -189,38 +189,6 @@
             this.lblheader.Size = new System.Drawing.Size(174, 23);
             this.lblheader.TabIndex = 19;
             this.lblheader.Text = "Committee Form";
-            // 
-            // minimize
-            // 
-            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize.AutoSize = true;
-            this.minimize.BackColor = System.Drawing.Color.Green;
-            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
-            this.minimize.ForeColor = System.Drawing.Color.Honeydew;
-            this.minimize.Location = new System.Drawing.Point(1280, 5);
-            this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(29, 36);
-            this.minimize.TabIndex = 18;
-            this.minimize.Text = "-";
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // close
-            // 
-            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close.AutoSize = true;
-            this.close.BackColor = System.Drawing.Color.Green;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("American Writer", 22F);
-            this.close.ForeColor = System.Drawing.Color.Honeydew;
-            this.close.Location = new System.Drawing.Point(1315, 4);
-            this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(24, 36);
-            this.close.TabIndex = 17;
-            this.close.Text = "x";
-            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // shapeContainer4
             // 
@@ -641,6 +609,40 @@
             this.rtfieldtext.Size = new System.Drawing.Size(626, 425);
             this.rtfieldtext.TabIndex = 179;
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Green;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Honeydew;
+            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
+            this.label7.Location = new System.Drawing.Point(1313, 10);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 35);
+            this.label7.TabIndex = 22;
+            this.label7.Text = " ";
+            this.label7.Click += new System.EventHandler(this.close_Click);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Green;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label10.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Honeydew;
+            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
+            this.label10.Location = new System.Drawing.Point(1283, 11);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 35);
+            this.label10.TabIndex = 23;
+            this.label10.Text = " ";
+            this.label10.Click += new System.EventHandler(this.minimize_Click);
+            // 
             // Committee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
@@ -694,8 +696,6 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape icowarning;
         private System.Windows.Forms.Panel Header;
         public System.Windows.Forms.Label lblheader;
-        private System.Windows.Forms.Label minimize;
-        private System.Windows.Forms.Label close;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private System.Windows.Forms.Label label20;
@@ -731,5 +731,7 @@
         public System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.TextBox rtfieldtext;
         private System.Windows.Forms.Label lblstatus;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
     }
 }

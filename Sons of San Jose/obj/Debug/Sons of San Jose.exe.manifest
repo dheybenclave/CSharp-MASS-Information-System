@@ -53,14 +53,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sons of San Jose.exe" size="10680320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sons of San Jose.exe" size="10749440">
       <assemblyIdentity name="Sons of San Jose" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lxmgZ/3bjcnmiDSPYSJUY2oSPgoDN8KeM6altAEmqzI=</dsig:DigestValue>
+        <dsig:DigestValue>rlZH8HKHDQnjLqSoD6QknO6SWzWmBQAkNzEeqFk4CqA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

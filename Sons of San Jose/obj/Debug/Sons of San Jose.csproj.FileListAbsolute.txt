@@ -120,3 +120,27 @@ D:\VSPath\Project_Path\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San J
 D:\VSPath\Project_Path\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.exe
 D:\VSPath\Project_Path\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.pdb
 D:\VSPath\Project_Path\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.csprojResolveAssemblyReference.cache
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\bin\Debug\Sons of San Jose.exe.config
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\bin\Debug\Sons of San Jose.exe.manifest
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\bin\Debug\Sons of San Jose.application
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\bin\Debug\Sons of San Jose.exe
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\bin\Debug\Sons of San Jose.pdb
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Add_Members.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Committee.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Create_Account.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.ExitForm.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Retrieve_Member.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Login_form.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.MasterList.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Notification_Input.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.President_form.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Printing_Masterlist.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Properties.Resources.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Secretary.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons_of_San_Jose.Settings.resources
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.csproj.GenerateResource.Cache
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.exe.manifest
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.application
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.exe
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.pdb
+D:\VSPath\Project_Path\Information System Sans of San Jose\Sons_of_San_Jose\Sons of San Jose\obj\Debug\Sons of San Jose.csprojResolveAssemblyReference.cache

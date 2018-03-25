@@ -40,6 +40,7 @@ namespace Sons_of_San_Jose
             {
                 pnlconnection.Visible = true;
                 pnllogin.Visible = false;
+                lbleditdbconnection.Enabled = lblcreateaccount.Enabled = false;
                 db.pass = true;
                 pnlconnection.BringToFront();
             }
@@ -214,7 +215,7 @@ namespace Sons_of_San_Jose
                             lblnoitfconnect.Text = "Your Database Connection Success.";
                             pnlconnection.Visible = false;
                             txtpass.Text = txtport.Text = txtserver.Text = txtusername.Text = "";
-                            lbleditdbconnection.Enabled = true;
+                            lbleditdbconnection.Enabled = lblcreateaccount.Enabled = true;
                             pnllogin.Visible = true;
                             pnllogin.BringToFront();
                         }
@@ -242,7 +243,7 @@ namespace Sons_of_San_Jose
                             lblnoitfconnect.Text = "Your Database Connection Success.";
                             pnlconnection.Visible = false;
                             txtpass.Text = txtport.Text = txtserver.Text = txtusername.Text = "";
-                            lbleditdbconnection.Enabled = true;
+                            lbleditdbconnection.Enabled = lblcreateaccount.Enabled = true;
                             pnllogin.Visible = true;
                             pnllogin.BringToFront();
                         }

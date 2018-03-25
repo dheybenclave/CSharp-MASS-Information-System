@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Printing_Masterlist));
             this.Header = new System.Windows.Forms.Panel();
             this.lblheader = new System.Windows.Forms.Label();
-            this.minimize = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Label();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -148,6 +146,7 @@
             this.lblcoordinatortreasurer = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.lbltreasurer = new System.Windows.Forms.Label();
+            this.lbldatetreasurer = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
@@ -163,7 +162,8 @@
             this.txttreasurercoordinator = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.txttreasurer = new System.Windows.Forms.TextBox();
-            this.lbldatetreasurer = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.buttom.SuspendLayout();
             this.tabcontrolprint.SuspendLayout();
@@ -178,9 +178,9 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.Green;
+            this.Header.Controls.Add(this.label41);
+            this.Header.Controls.Add(this.label45);
             this.Header.Controls.Add(this.lblheader);
-            this.Header.Controls.Add(this.minimize);
-            this.Header.Controls.Add(this.close);
             this.Header.Controls.Add(this.shapeContainer4);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
@@ -199,38 +199,6 @@
             this.lblheader.TabIndex = 19;
             this.lblheader.Text = "Printing Form";
             this.lblheader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // minimize
-            // 
-            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize.AutoSize = true;
-            this.minimize.BackColor = System.Drawing.Color.Green;
-            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
-            this.minimize.ForeColor = System.Drawing.Color.Honeydew;
-            this.minimize.Location = new System.Drawing.Point(1280, 5);
-            this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(29, 36);
-            this.minimize.TabIndex = 18;
-            this.minimize.Text = "-";
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // close
-            // 
-            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close.AutoSize = true;
-            this.close.BackColor = System.Drawing.Color.Green;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("American Writer", 22F);
-            this.close.ForeColor = System.Drawing.Color.Honeydew;
-            this.close.Location = new System.Drawing.Point(1315, 4);
-            this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(24, 36);
-            this.close.TabIndex = 17;
-            this.close.Text = "x";
-            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // shapeContainer4
             // 
@@ -1616,6 +1584,17 @@
             this.lbltreasurer.TabIndex = 167;
             this.lbltreasurer.Text = "TREASURER";
             // 
+            // lbldatetreasurer
+            // 
+            this.lbldatetreasurer.AutoSize = true;
+            this.lbldatetreasurer.BackColor = System.Drawing.Color.Honeydew;
+            this.lbldatetreasurer.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.lbldatetreasurer.Location = new System.Drawing.Point(92, 184);
+            this.lbldatetreasurer.Name = "lbldatetreasurer";
+            this.lbldatetreasurer.Size = new System.Drawing.Size(87, 15);
+            this.lbldatetreasurer.TabIndex = 147;
+            this.lbldatetreasurer.Text = "Date Submitted";
+            // 
             // label50
             // 
             this.label50.AutoSize = true;
@@ -1780,16 +1759,39 @@
             this.txttreasurer.TabIndex = 159;
             this.txttreasurer.TextChanged += new System.EventHandler(this.txttreasurer_TextChanged);
             // 
-            // lbldatetreasurer
+            // label41
             // 
-            this.lbldatetreasurer.AutoSize = true;
-            this.lbldatetreasurer.BackColor = System.Drawing.Color.Honeydew;
-            this.lbldatetreasurer.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            this.lbldatetreasurer.Location = new System.Drawing.Point(92, 184);
-            this.lbldatetreasurer.Name = "lbldatetreasurer";
-            this.lbldatetreasurer.Size = new System.Drawing.Size(87, 15);
-            this.lbldatetreasurer.TabIndex = 147;
-            this.lbldatetreasurer.Text = "Date Submitted";
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.Green;
+            this.label41.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label41.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.Honeydew;
+            this.label41.Image = ((System.Drawing.Image)(resources.GetObject("label41.Image")));
+            this.label41.Location = new System.Drawing.Point(1320, 9);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(21, 35);
+            this.label41.TabIndex = 21;
+            this.label41.Text = " ";
+            this.label41.Click += new System.EventHandler(this.close_Click);
+            // 
+            // label45
+            // 
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label45.AutoSize = true;
+            this.label45.BackColor = System.Drawing.Color.Green;
+            this.label45.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label45.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Honeydew;
+            this.label45.Image = ((System.Drawing.Image)(resources.GetObject("label45.Image")));
+            this.label45.Location = new System.Drawing.Point(1290, 10);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(21, 35);
+            this.label45.TabIndex = 22;
+            this.label45.Text = " ";
+            this.label45.Click += new System.EventHandler(this.minimize_Click);
             // 
             // Printing_Masterlist
             // 
@@ -1834,8 +1836,6 @@
 
         private System.Windows.Forms.Panel Header;
         public System.Windows.Forms.Label lblheader;
-        private System.Windows.Forms.Label minimize;
-        private System.Windows.Forms.Label close;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private System.Windows.Forms.Panel buttom;
@@ -1966,5 +1966,7 @@
         private System.Windows.Forms.Label T;
         private System.Windows.Forms.Label lblbudget;
         private System.Windows.Forms.Label lbldatetreasurer;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label45;
     }
 }

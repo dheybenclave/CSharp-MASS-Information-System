@@ -38,8 +38,6 @@
             this.icowarning = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.Header = new System.Windows.Forms.Panel();
             this.lblheader = new System.Windows.Forms.Label();
-            this.minimize = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Label();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -71,8 +69,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.pnlforadmin = new System.Windows.Forms.Panel();
+            this.lblnotifrightupdate = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblcheckposition = new System.Windows.Forms.Label();
+            this.lblcheckuser = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbrightposition = new System.Windows.Forms.ComboBox();
@@ -97,6 +99,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnlconnection = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.lblnoitfconnect = new System.Windows.Forms.Label();
             this.btnshow = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -113,10 +116,8 @@
             this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.btnconnect = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.btnsecreatry = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.lblcheckuser = new System.Windows.Forms.Label();
-            this.lblcheckposition = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblnotifrightupdate = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.buttom.SuspendLayout();
             this.Header.SuspendLayout();
             this.pnlconfirmation.SuspendLayout();
@@ -202,9 +203,9 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.Green;
+            this.Header.Controls.Add(this.label23);
+            this.Header.Controls.Add(this.label24);
             this.Header.Controls.Add(this.lblheader);
-            this.Header.Controls.Add(this.minimize);
-            this.Header.Controls.Add(this.close);
             this.Header.Controls.Add(this.shapeContainer4);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
@@ -224,38 +225,6 @@
             this.lblheader.Size = new System.Drawing.Size(174, 23);
             this.lblheader.TabIndex = 19;
             this.lblheader.Text = "Account Settings";
-            // 
-            // minimize
-            // 
-            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize.AutoSize = true;
-            this.minimize.BackColor = System.Drawing.Color.Green;
-            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.Font = new System.Drawing.Font("American Writer", 22F);
-            this.minimize.ForeColor = System.Drawing.Color.Honeydew;
-            this.minimize.Location = new System.Drawing.Point(1280, 5);
-            this.minimize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(29, 36);
-            this.minimize.TabIndex = 18;
-            this.minimize.Text = "-";
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // close
-            // 
-            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close.AutoSize = true;
-            this.close.BackColor = System.Drawing.Color.Green;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("American Writer", 22F);
-            this.close.ForeColor = System.Drawing.Color.Honeydew;
-            this.close.Location = new System.Drawing.Point(1315, 4);
-            this.close.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(24, 36);
-            this.close.TabIndex = 17;
-            this.close.Text = "x";
-            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // shapeContainer4
             // 
@@ -666,6 +635,28 @@
             this.pnlforadmin.Size = new System.Drawing.Size(659, 524);
             this.pnlforadmin.TabIndex = 170;
             // 
+            // lblnotifrightupdate
+            // 
+            this.lblnotifrightupdate.AutoSize = true;
+            this.lblnotifrightupdate.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.lblnotifrightupdate.ForeColor = System.Drawing.Color.Red;
+            this.lblnotifrightupdate.Location = new System.Drawing.Point(26, 281);
+            this.lblnotifrightupdate.Name = "lblnotifrightupdate";
+            this.lblnotifrightupdate.Size = new System.Drawing.Size(184, 15);
+            this.lblnotifrightupdate.TabIndex = 111120;
+            this.lblnotifrightupdate.Text = "Note: the update is now available!";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(26, 249);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(308, 15);
+            this.label10.TabIndex = 111119;
+            this.label10.Text = "Note: Check the username and position before you update";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -694,6 +685,36 @@
             this.groupBox1.Size = new System.Drawing.Size(456, 185);
             this.groupBox1.TabIndex = 111118;
             this.groupBox1.TabStop = false;
+            // 
+            // lblcheckposition
+            // 
+            this.lblcheckposition.AutoSize = true;
+            this.lblcheckposition.BackColor = System.Drawing.SystemColors.Window;
+            this.lblcheckposition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcheckposition.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcheckposition.ForeColor = System.Drawing.Color.Green;
+            this.lblcheckposition.Location = new System.Drawing.Point(365, 130);
+            this.lblcheckposition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcheckposition.Name = "lblcheckposition";
+            this.lblcheckposition.Size = new System.Drawing.Size(41, 14);
+            this.lblcheckposition.TabIndex = 111120;
+            this.lblcheckposition.Text = "CHECK";
+            this.lblcheckposition.Click += new System.EventHandler(this.lblcheckposition_Click);
+            // 
+            // lblcheckuser
+            // 
+            this.lblcheckuser.AutoSize = true;
+            this.lblcheckuser.BackColor = System.Drawing.SystemColors.Window;
+            this.lblcheckuser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcheckuser.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
+            this.lblcheckuser.ForeColor = System.Drawing.Color.Green;
+            this.lblcheckuser.Location = new System.Drawing.Point(381, 33);
+            this.lblcheckuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcheckuser.Name = "lblcheckuser";
+            this.lblcheckuser.Size = new System.Drawing.Size(41, 14);
+            this.lblcheckuser.TabIndex = 111119;
+            this.lblcheckuser.Text = "CHECK";
+            this.lblcheckuser.Click += new System.EventHandler(this.lblcheckuser_Click);
             // 
             // button3
             // 
@@ -946,6 +967,7 @@
             // 
             // pnlconnection
             // 
+            this.pnlconnection.Controls.Add(this.label15);
             this.pnlconnection.Controls.Add(this.lblnoitfconnect);
             this.pnlconnection.Controls.Add(this.btnshow);
             this.pnlconnection.Controls.Add(this.label12);
@@ -965,13 +987,26 @@
             this.pnlconnection.Size = new System.Drawing.Size(594, 409);
             this.pnlconnection.TabIndex = 23;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(38, 301);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(327, 15);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Note : this password is your database password (in workbench)";
+            // 
             // lblnoitfconnect
             // 
             this.lblnoitfconnect.AutoSize = true;
             this.lblnoitfconnect.BackColor = System.Drawing.Color.Transparent;
             this.lblnoitfconnect.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.lblnoitfconnect.ForeColor = System.Drawing.Color.Red;
-            this.lblnoitfconnect.Location = new System.Drawing.Point(139, 309);
+            this.lblnoitfconnect.Location = new System.Drawing.Point(38, 369);
             this.lblnoitfconnect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnoitfconnect.Name = "lblnoitfconnect";
             this.lblnoitfconnect.Size = new System.Drawing.Size(165, 16);
@@ -1041,6 +1076,7 @@
             this.txtusernamedb.Name = "txtusernamedb";
             this.txtusernamedb.Size = new System.Drawing.Size(184, 21);
             this.txtusernamedb.TabIndex = 4;
+            this.txtusernamedb.Text = "root";
             this.txtusernamedb.TextChanged += new System.EventHandler(this.txtserver_TextChanged);
             // 
             // label13
@@ -1089,6 +1125,7 @@
             this.txtport.Name = "txtport";
             this.txtport.Size = new System.Drawing.Size(184, 21);
             this.txtport.TabIndex = 2;
+            this.txtport.Text = "3306";
             this.txtport.TextChanged += new System.EventHandler(this.txtserver_TextChanged);
             // 
             // label21
@@ -1112,6 +1149,7 @@
             this.txtserver.Name = "txtserver";
             this.txtserver.Size = new System.Drawing.Size(184, 21);
             this.txtserver.TabIndex = 1;
+            this.txtserver.Text = "localhost";
             this.txtserver.TextChanged += new System.EventHandler(this.txtserver_TextChanged);
             // 
             // label22
@@ -1150,7 +1188,7 @@
             this.btnconnect.BorderWidth = 5;
             this.btnconnect.CornerRadius = 21;
             this.btnconnect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnconnect.Location = new System.Drawing.Point(160, 345);
+            this.btnconnect.Location = new System.Drawing.Point(213, 352);
             this.btnconnect.Name = "btnconnect";
             this.btnconnect.Size = new System.Drawing.Size(133, 42);
             this.btnconnect.Click += new System.EventHandler(this.btnconnect_Click);
@@ -1169,57 +1207,38 @@
             this.btnsecreatry.Name = "btnsecreatry";
             this.btnsecreatry.Size = new System.Drawing.Size(200, 200);
             // 
-            // lblcheckuser
+            // label23
             // 
-            this.lblcheckuser.AutoSize = true;
-            this.lblcheckuser.BackColor = System.Drawing.SystemColors.Window;
-            this.lblcheckuser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblcheckuser.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcheckuser.ForeColor = System.Drawing.Color.Green;
-            this.lblcheckuser.Location = new System.Drawing.Point(381, 33);
-            this.lblcheckuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblcheckuser.Name = "lblcheckuser";
-            this.lblcheckuser.Size = new System.Drawing.Size(41, 14);
-            this.lblcheckuser.TabIndex = 111119;
-            this.lblcheckuser.Text = "CHECK";
-            this.lblcheckuser.Click += new System.EventHandler(this.lblcheckuser_Click);
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Green;
+            this.label23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label23.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Honeydew;
+            this.label23.Image = ((System.Drawing.Image)(resources.GetObject("label23.Image")));
+            this.label23.Location = new System.Drawing.Point(1320, 8);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(21, 35);
+            this.label23.TabIndex = 21;
+            this.label23.Text = " ";
+            this.label23.Click += new System.EventHandler(this.close_Click);
             // 
-            // lblcheckposition
+            // label24
             // 
-            this.lblcheckposition.AutoSize = true;
-            this.lblcheckposition.BackColor = System.Drawing.SystemColors.Window;
-            this.lblcheckposition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblcheckposition.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
-            this.lblcheckposition.ForeColor = System.Drawing.Color.Green;
-            this.lblcheckposition.Location = new System.Drawing.Point(365, 130);
-            this.lblcheckposition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblcheckposition.Name = "lblcheckposition";
-            this.lblcheckposition.Size = new System.Drawing.Size(41, 14);
-            this.lblcheckposition.TabIndex = 111120;
-            this.lblcheckposition.Text = "CHECK";
-            this.lblcheckposition.Click += new System.EventHandler(this.lblcheckposition_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(26, 249);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(308, 15);
-            this.label10.TabIndex = 111119;
-            this.label10.Text = "Note: Check the username and position before you update";
-            // 
-            // lblnotifrightupdate
-            // 
-            this.lblnotifrightupdate.AutoSize = true;
-            this.lblnotifrightupdate.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.lblnotifrightupdate.ForeColor = System.Drawing.Color.Red;
-            this.lblnotifrightupdate.Location = new System.Drawing.Point(26, 281);
-            this.lblnotifrightupdate.Name = "lblnotifrightupdate";
-            this.lblnotifrightupdate.Size = new System.Drawing.Size(184, 15);
-            this.lblnotifrightupdate.TabIndex = 111120;
-            this.lblnotifrightupdate.Text = "Note: the update is now available!";
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Green;
+            this.label24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label24.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Honeydew;
+            this.label24.Image = ((System.Drawing.Image)(resources.GetObject("label24.Image")));
+            this.label24.Location = new System.Drawing.Point(1290, 9);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(21, 35);
+            this.label24.TabIndex = 22;
+            this.label24.Text = " ";
             // 
             // Settings
             // 
@@ -1273,8 +1292,6 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape icowarning;
         private System.Windows.Forms.Panel Header;
         public System.Windows.Forms.Label lblheader;
-        private System.Windows.Forms.Label minimize;
-        private System.Windows.Forms.Label close;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
@@ -1352,5 +1369,8 @@
         private System.Windows.Forms.Label lblcheckposition;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblnotifrightupdate;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }

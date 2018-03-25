@@ -608,6 +608,7 @@ namespace Sons_of_San_Jose
             {
                 lstmasterlist.Items.Clear();
                 ListviewThrow();
+                reset();
                 isUpdated = false;
             }
             if (isDelete)
@@ -619,6 +620,7 @@ namespace Sons_of_San_Jose
                 reset();
                 isDelete = false;
             }
+
         }
         private void btnprint_Click(object sender, EventArgs e)
         {

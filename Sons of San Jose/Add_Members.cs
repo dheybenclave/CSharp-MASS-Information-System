@@ -35,6 +35,8 @@ namespace Sons_of_San_Jose
 
                 timer2.Enabled = true;
                 timer2.Start();
+
+                pnlfill.AutoScrollPosition = new Point(0,0);
         }
 
         public static void reset(Control ctrl)
@@ -57,6 +59,8 @@ namespace Sons_of_San_Jose
         string donebday;
         string donedateofinvest;
         string donedateofpromote;
+        int cons_id = 0;
+   
 
 
         private void Add_Members_Load(object sender, EventArgs e)
@@ -142,9 +146,10 @@ namespace Sons_of_San_Jose
             lblhonors.Visible = false;
         }
 
-
         public void BrowseImage()
         {
+            cons_id = 0;
+
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Multiselect = false;
             dlg.Filter = "JPG files|*.jpg|PNG files|*.png";
@@ -153,10 +158,9 @@ namespace Sons_of_San_Jose
             {
                 pathimage = dlg.FileName;
                 string name = dlg.SafeFileName.ToString();//dhe.png
-                donepath =  txtfname.Text +"."+ name.Split('.')[1];
-                File.Copy(pathimage, Application.StartupPath + "\\pictures\\" + donepath, true);
-                string temppath = Application.StartupPath + "\\pictures\\" + txtfname.Text + "." + name.Split('.')[1];
-                picturebox.ImageLocation = temppath;
+                donepath = cons_id.ToString() + "." + name.Split('.')[1];
+
+                picturebox.ImageLocation = pathimage;
             }
             else { }
 
@@ -470,7 +474,7 @@ namespace Sons_of_San_Jose
                 
                 while (dr.Read())
                 {
-                    updatepath =Application.StartupPath+"\\Pictures\\"+ dr["pd_photo"].ToString();
+                    updatepath = Application.StartupPath + "\\Pictures\\" + dr["pd_photo"].ToString();
                     picturebox.ImageLocation = updatepath;
                     string fullname = dr["pd_fullname"].ToString();
                     txtaddress.Text = dr["pd_address"].ToString();
@@ -506,6 +510,7 @@ namespace Sons_of_San_Jose
                     allviolations = dr["md_violations"].ToString();
                     allsacraments = dr["md_sacraments"].ToString();
                     string stats = dr["md_status"].ToString();
+
                     if (stats == "Active") { rdactive.Checked = true; }
                     else if (stats == "In-Active") { rdinactive.Checked = true; }
                     else if (stats == "Leave") { rdleave.Checked = true; }
@@ -607,9 +612,20 @@ namespace Sons_of_San_Jose
         }
         public void UpdateDetailsSave()
         {
-            if (donepath == "") { donepath = updatepath; }
-            else { donepath = donepath; }
- 
+            cons_id = Convert.ToInt32(pid);
+
+            string finalpath;
+            if (donepath != null)
+            {
+                finalpath = cons_id.ToString() + "." + donepath.Split('.')[1];
+                File.Delete(Application.StartupPath + "\\Pictures\\" + finalpath);
+                File.Copy(pathimage, Application.StartupPath + "\\pictures\\" + finalpath, true);
+            }
+            else {
+                    finalpath = cons_id.ToString() + "." + updatepath.Split('.')[1];
+            }
+           
+
             try
             {
                 cmd = new MySqlCommand("UpdateDetailsSave", db.OpenConnection());
@@ -624,7 +640,7 @@ namespace Sons_of_San_Jose
                     cmd.Parameters.Add(new MySqlParameter("?pd_age", txtage.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_email", txtemail.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_batch", txtbatch.Text + " - " + txtclassof.Text));
-                    cmd.Parameters.Add(new MySqlParameter("?pd_photo", donepath));
+                    cmd.Parameters.Add(new MySqlParameter("?pd_photo", finalpath));
                     cmd.Parameters.Add(new MySqlParameter("?pd_mothername", txtmothername.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_motheroccupation", txtmotheroccupation.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_fathername", txtfathername.Text));
@@ -674,9 +690,26 @@ namespace Sons_of_San_Jose
         }
         public void Saveall()
         {
-
+            string finalpath;
             try
             {
+               
+                if (donepath != null)
+                {
+                    string q = "SELECT pd_id FROM dbms_mass.p_details order  by pd_id desc limit 1 ;";
+
+                    cmd = new MySqlCommand(q, db.OpenConnection());
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows) { while (dr.Read()) { cons_id = (int)dr[0] + 1; } }
+                    finalpath = cons_id.ToString() + "." + donepath.Split('.')[1];
+                    File.Copy(pathimage, Application.StartupPath + "\\pictures\\" + finalpath, true);
+                }
+                else
+                {
+                    finalpath = "";
+                }
+
+
 
                 cmd = new MySqlCommand("Saveall", db.OpenConnection());
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -714,7 +747,7 @@ namespace Sons_of_San_Jose
                     cmd.Parameters.Add(new MySqlParameter("?pd_email", txtemail.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_contactnumber", txtcontactnumber.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_batch", txtbatch.Text + " - " + txtclassof.Text));
-                    cmd.Parameters.Add(new MySqlParameter("?pd_photo", donepath));
+                    cmd.Parameters.Add(new MySqlParameter("?pd_photo", finalpath));
                     cmd.Parameters.Add(new MySqlParameter("?pd_mothername", txtmothername.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_motheroccupation", txtmotheroccupation.Text));
                     cmd.Parameters.Add(new MySqlParameter("?pd_fathername",txtfathername.Text));
@@ -803,7 +836,7 @@ namespace Sons_of_San_Jose
                 txtvocational.Text = formaltext(txtvocational.Text);
                 txtvocationalyear.Text = formaltext(txtvocationalyear.Text);
                 txtvocationalcourse.Text = formaltext(txtvocationalcourse.Text);
-
+                
                 if (lblheader.Text == "Adding Member's")
                 {
                     buttom.BackColor = Color.Lime;
@@ -901,24 +934,24 @@ namespace Sons_of_San_Jose
 
         private void txtmothername_TextChanged(object sender, EventArgs e)
         {
-            if ((txtmothername.Text == "decease") || (txtmothername.Text == "none"))
-            {
-                txtmotheroccupation.Text = "None";
-                txtcontactnumbermother.Text = "None";
-            }
-            else
-            { }
+            //if ((txtmothername.Text == "deceased") || (txtmothername.Text == "none"))
+            //{
+            //    txtmotheroccupation.Text = "None";
+            //    txtcontactnumbermother.Text = "None";
+            //}
+            //else
+            //{ }
         }
 
         private void txtfathername_TextChanged(object sender, EventArgs e)
         {
-            if ((txtfathername.Text == "decease") || (txtfathername.Text == "none"))
-            {
-                txtfatheroccupation.Text = "None";
-                txtcontactnumberfather.Text = "None";
-            }
-            else
-            { }
+        //    if ((txtfathername.Text == "deceased") || (txtfathername.Text == "none"))
+        //    {
+        //        txtfatheroccupation.Text = "None";
+        //        txtcontactnumberfather.Text = "None";
+        //    }
+        //    else
+        //    { }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

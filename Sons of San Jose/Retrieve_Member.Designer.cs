@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retrieve_Member));
             this.Header = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.lblheader = new System.Windows.Forms.Label();
             this.minimize = new System.Windows.Forms.Label();
             this.close = new System.Windows.Forms.Label();
@@ -153,13 +151,13 @@
             this.headmasterlist = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.btnsearch = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chkselectall = new System.Windows.Forms.CheckBox();
             this.lblsearch = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -171,8 +169,8 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.Green;
+            this.Header.Controls.Add(this.label1);
             this.Header.Controls.Add(this.label6);
-            this.Header.Controls.Add(this.label12);
             this.Header.Controls.Add(this.lblheader);
             this.Header.Controls.Add(this.minimize);
             this.Header.Controls.Add(this.close);
@@ -182,38 +180,6 @@
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1354, 66);
             this.Header.TabIndex = 142;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Green;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("American Writer", 22F);
-            this.label6.ForeColor = System.Drawing.Color.Honeydew;
-            this.label6.Location = new System.Drawing.Point(1282, 10);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 36);
-            this.label6.TabIndex = 140;
-            this.label6.Text = "-";
-            this.label6.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Green;
-            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label12.Font = new System.Drawing.Font("American Writer", 22F);
-            this.label12.ForeColor = System.Drawing.Color.Honeydew;
-            this.label12.Location = new System.Drawing.Point(1317, 9);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 36);
-            this.label12.TabIndex = 139;
-            this.label12.Text = "x";
-            this.label12.Click += new System.EventHandler(this.close_Click);
             // 
             // lblheader
             // 
@@ -1105,6 +1071,9 @@
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(227, 24);
             this.txtsearch.TabIndex = 147;
+            this.txtsearch.Click += new System.EventHandler(this.txtsearch_Click);
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            this.txtsearch.Enter += new System.EventHandler(this.lblsearch_Click);
             // 
             // lblmasterlist
             // 
@@ -1112,7 +1081,7 @@
             this.lblmasterlist.BackColor = System.Drawing.Color.Green;
             this.lblmasterlist.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.lblmasterlist.ForeColor = System.Drawing.Color.Honeydew;
-            this.lblmasterlist.Location = new System.Drawing.Point(1228, 169);
+            this.lblmasterlist.Location = new System.Drawing.Point(1119, 167);
             this.lblmasterlist.Name = "lblmasterlist";
             this.lblmasterlist.Size = new System.Drawing.Size(77, 17);
             this.lblmasterlist.TabIndex = 146;
@@ -1413,30 +1382,6 @@
             this.btnsearch.Size = new System.Drawing.Size(23, 22);
             this.btnsearch.Click += new System.EventHandler(this.btnclearsearch_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Green;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Honeydew;
-            this.label1.Location = new System.Drawing.Point(994, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 17);
-            this.label1.TabIndex = 154;
-            this.label1.Text = "Select All";
-            // 
-            // chkselectall
-            // 
-            this.chkselectall.AutoSize = true;
-            this.chkselectall.BackColor = System.Drawing.Color.Green;
-            this.chkselectall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkselectall.ForeColor = System.Drawing.Color.Green;
-            this.chkselectall.Location = new System.Drawing.Point(977, 172);
-            this.chkselectall.Name = "chkselectall";
-            this.chkselectall.Size = new System.Drawing.Size(12, 11);
-            this.chkselectall.TabIndex = 153;
-            this.chkselectall.UseVisualStyleBackColor = false;
-            // 
             // lblsearch
             // 
             this.lblsearch.AutoSize = true;
@@ -1449,6 +1394,7 @@
             this.lblsearch.Size = new System.Drawing.Size(180, 13);
             this.lblsearch.TabIndex = 155;
             this.lblsearch.Text = "Search personal details and etc...";
+            this.lblsearch.Click += new System.EventHandler(this.lblsearch_Click);
             // 
             // label13
             // 
@@ -1488,6 +1434,40 @@
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Green;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Honeydew;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(1315, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 35);
+            this.label1.TabIndex = 21;
+            this.label1.Text = " ";
+            this.label1.Click += new System.EventHandler(this.close_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Green;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("American Writer", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Honeydew;
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.Location = new System.Drawing.Point(1285, 9);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 35);
+            this.label6.TabIndex = 22;
+            this.label6.Text = " ";
+            this.label6.Click += new System.EventHandler(this.minimize_Click);
+            // 
             // Retrieve_Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1496,8 +1476,6 @@
             this.ClientSize = new System.Drawing.Size(1354, 735);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblsearch);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.chkselectall);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.lblmasterlist);
@@ -1652,8 +1630,6 @@
         private Microsoft.VisualBasic.PowerPacks.RectangleShape btnclearsearch;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape headmasterlist;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chkselectall;
         private System.Windows.Forms.ColumnHeader c36;
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.Label label13;
@@ -1661,8 +1637,8 @@
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label12;
 
 
     }
